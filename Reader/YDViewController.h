@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YDViewController : UIViewController
+@class YDPublication;
+
+@interface YDViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic,strong) YDPublication *publication;
+@property (nonatomic,strong) IBOutlet UITableView *tblArticles;
 
 @end

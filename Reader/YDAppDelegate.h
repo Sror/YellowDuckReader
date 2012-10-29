@@ -13,7 +13,6 @@
 @interface YDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
 @property (strong, nonatomic) YDViewController *viewController;
 
 @end

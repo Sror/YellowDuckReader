@@ -18,6 +18,9 @@
 		C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69812163E89EA00CF239E /* Default-568h@2x.png */; };
 		C6B69816163E89EA00CF239E /* YDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69815163E89EA00CF239E /* YDViewController.m */; };
 		C6B69819163E89EA00CF239E /* YDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69817163E89EA00CF239E /* YDViewController.xib */; };
+		C6B69825163E8B0800CF239E /* book in Resources */ = {isa = PBXBuildFile; fileRef = C6B69824163E8B0800CF239E /* book */; };
+		C6B6982A163E8BC300CF239E /* YDPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69829163E8BC300CF239E /* YDPublication.m */; };
+		C6B6982E163E907D00CF239E /* YDArticleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6982D163E907D00CF239E /* YDArticleViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,11 @@
 		C6B69814163E89EA00CF239E /* YDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDViewController.h; sourceTree = "<group>"; };
 		C6B69815163E89EA00CF239E /* YDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDViewController.m; sourceTree = "<group>"; };
 		C6B69818163E89EA00CF239E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YDViewController.xib; sourceTree = "<group>"; };
+		C6B69824163E8B0800CF239E /* book */ = {isa = PBXFileReference; lastKnownFileType = folder; path = book; sourceTree = "<group>"; };
+		C6B69828163E8BC300CF239E /* YDPublication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDPublication.h; sourceTree = "<group>"; };
+		C6B69829163E8BC300CF239E /* YDPublication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPublication.m; sourceTree = "<group>"; };
+		C6B6982C163E907D00CF239E /* YDArticleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDArticleViewCell.h; sourceTree = "<group>"; };
+		C6B6982D163E907D00CF239E /* YDArticleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDArticleViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		C6B697ED163E89E900CF239E = {
 			isa = PBXGroup;
 			children = (
+				C6B69824163E8B0800CF239E /* book */,
 				C6B69802163E89E900CF239E /* Reader */,
 				C6B697FB163E89E900CF239E /* Frameworks */,
 				C6B697F9163E89E900CF239E /* Products */,
@@ -83,6 +92,8 @@
 		C6B69802163E89E900CF239E /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				C6B69827163E8B7800CF239E /* model */,
+				C6B6982B163E905800CF239E /* views */,
 				C6B6980B163E89EA00CF239E /* YDAppDelegate.h */,
 				C6B6980C163E89EA00CF239E /* YDAppDelegate.m */,
 				C6B69814163E89EA00CF239E /* YDViewController.h */,
@@ -105,6 +116,24 @@
 				C6B69812163E89EA00CF239E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6B69827163E8B7800CF239E /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69828163E8BC300CF239E /* YDPublication.h */,
+				C6B69829163E8BC300CF239E /* YDPublication.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C6B6982B163E905800CF239E /* views */ = {
+			isa = PBXGroup;
+			children = (
+				C6B6982C163E907D00CF239E /* YDArticleViewCell.h */,
+				C6B6982D163E907D00CF239E /* YDArticleViewCell.m */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +193,7 @@
 				C6B69811163E89EA00CF239E /* Default@2x.png in Resources */,
 				C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */,
 				C6B69819163E89EA00CF239E /* YDViewController.xib in Resources */,
+				C6B69825163E8B0800CF239E /* book in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +207,8 @@
 				C6B69809163E89EA00CF239E /* main.m in Sources */,
 				C6B6980D163E89EA00CF239E /* YDAppDelegate.m in Sources */,
 				C6B69816163E89EA00CF239E /* YDViewController.m in Sources */,
+				C6B6982A163E8BC300CF239E /* YDPublication.m in Sources */,
+				C6B6982E163E907D00CF239E /* YDArticleViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +293,7 @@
 				GCC_PREFIX_HEADER = "Reader/Reader-Prefix.pch";
 				INFOPLIST_FILE = "Reader/Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -272,6 +305,7 @@
 				GCC_PREFIX_HEADER = "Reader/Reader-Prefix.pch";
 				INFOPLIST_FILE = "Reader/Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -295,6 +329,7 @@
 				C6B6981E163E89EA00CF239E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
