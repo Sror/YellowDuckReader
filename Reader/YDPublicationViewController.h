@@ -11,7 +11,7 @@
 @class YDPublication;
 @class YDArticle;
 
-@interface YDPublicationViewController : IIViewDeckController
+@interface YDPublicationViewController : IIViewDeckController <IIViewDeckControllerDelegate>
 
 @property (nonatomic,strong) YDPublication *publication;
 

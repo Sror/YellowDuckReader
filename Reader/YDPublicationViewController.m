@@ -9,6 +9,7 @@
 #import "YDPublicationViewController.h"
 #import "YDArticleViewController.h"
 #import "YDContentsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation YDPublicationViewController
 
@@ -16,6 +17,7 @@
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
         self.publication = publication;
+        self.delegate    = self;
     }
     return self;
 }
@@ -42,6 +44,15 @@
     
     [self closeLeftViewAnimated:YES];
     
+}
+
+- (void)viewDeckController:(IIViewDeckController*)viewDeckController applyShadow:(CALayer*)shadowLayer withBounds:(CGRect)rect {
+    shadowLayer.masksToBounds = NO;
+    shadowLayer.shadowRadius  = 4;
+    shadowLayer.shadowOpacity = 0.5;
+    shadowLayer.shadowColor   = [[UIColor blackColor] CGColor];
+    shadowLayer.shadowOffset  = CGSizeZero;
+    shadowLayer.shadowPath    = [[UIBezierPath bezierPathWithRect:rect] CGPath];
 }
 
 @end

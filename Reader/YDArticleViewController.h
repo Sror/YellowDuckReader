@@ -17,11 +17,13 @@
 
 @property (nonatomic,strong) YDArticle* currentArticle;
 @property (nonatomic,strong) YDPublication *publication;
+@property (nonatomic,strong) IBOutlet UILabel *lblMagazine;
+@property (nonatomic,strong) IBOutlet UILabel *lblArticleTitle;
 @property (nonatomic,strong) IBOutlet UIWebView *articleView;
-@property (nonatomic,strong) IBOutlet UIView *loadingView;
 @property (nonatomic,strong) IBOutlet UIActivityIndicatorView *loadingIndicator;
-@property (nonatomic,strong) IBOutlet UILabel *loadingLabel;
 @property (nonatomic,strong) YDPublicationViewController *viewDeckController;
+@property (nonatomic,strong) UIPopoverController *shareController;
+@property (nonatomic,strong) IBOutlet UIButton *btnShare;
 
 - (id)initWithPublication:(YDPublication*)publication;
 
@@ -29,5 +31,6 @@
 - (void)loadArticle:(YDArticle*)article fromPublication:(YDPublication*)publication;
 
 - (IBAction)showMenu:(id)sender;
+- (IBAction)showShareSheet:(id)sender;
 
 @end

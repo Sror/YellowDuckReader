@@ -30,15 +30,15 @@
     UINib *contentCellNib = [UINib nibWithNibName:@"YDContentCell" bundle:nil];
     [self.contentsTable registerNib:contentCellNib forCellReuseIdentifier:@"YDContentCell"];
     
-    UIFont *interfaceFont = [UIFont fontWithName:@"PT Sans" size:17.0];
-    self.lblMagazine.font = interfaceFont;
+//    UIFont *interfaceFont = [UIFont fontWithName:@"PT Sans" size:17.0];
+//    self.lblMagazine.font = interfaceFont;
     
     self.lblMagazine.layer.masksToBounds = NO;
-    self.lblMagazine.layer.shadowRadius = 10;
+    self.lblMagazine.layer.shadowRadius  = 4;
     self.lblMagazine.layer.shadowOpacity = 0.5;
-    self.lblMagazine.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.lblMagazine.layer.shadowOffset = CGSizeZero;
-    self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
+    self.lblMagazine.layer.shadowColor   = [[UIColor blackColor] CGColor];
+    self.lblMagazine.layer.shadowOffset  = CGSizeZero;
+    self.lblMagazine.layer.shadowPath    = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
 
 }
 

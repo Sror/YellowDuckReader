@@ -10,6 +10,7 @@
 #import "YDPublication.h"
 #import "YDArticle.h"
 #import "YDPublicationViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation YDArticleViewController
 
@@ -29,13 +30,18 @@
     // Configure the contents view
     [self configureContentsView];
     
-//    // Make the webview transparent
-//    self.articleView.backgroundColor = [UIColor clearColor];
-//    [self.articleView setOpaque:NO];
-    
     // Configure the web view
+    self.articleView.scalesPageToFit    = NO;
     self.articleView.scrollView.bounces = NO;
-    self.articleView.delegate = self;
+    self.articleView.delegate           = self;
+    
+    // Add a shadow to the top bar
+    self.lblMagazine.layer.masksToBounds = NO;
+    self.lblMagazine.layer.shadowRadius  = 4;
+    self.lblMagazine.layer.shadowOpacity = 0.5;
+    self.lblMagazine.layer.shadowColor   = [[UIColor blackColor] CGColor];
+    self.lblMagazine.layer.shadowOffset  = CGSizeZero;
+    self.lblMagazine.layer.shadowPath    = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
     
     // Load the first article
     [self loadArticleWithIndex:0 fromPublication:self.publication];
@@ -124,6 +130,10 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self configureContentsView];
+    self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
+    [self.articleView reload];
+    // fails if toc is shown
+    // fails to reflow the text
 }
 
 #pragma mark - Helper functions
@@ -135,29 +145,54 @@
 
 - (void)startLoadingArticle:(YDArticle*)article {
     self.articleView.hidden      = YES;
-    self.loadingView.hidden      = NO;
     self.loadingIndicator.hidden = NO;
-    self.loadingLabel.text       = article.title;
-    self.loadingLabel.hidden     = NO;
+    self.lblArticleTitle.text    = article.title;
     [self.loadingIndicator startAnimating];
 }
 
 - (void)stopLoading {
-    self.articleView.hidden = NO;
-    self.loadingView.hidden = YES;
+    self.articleView.hidden      = NO;
+    self.loadingIndicator.hidden = YES;
     [self.loadingIndicator stopAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    self.articleView.scrollView.scrollsToTop = YES; // NOT WORKING
 }
 
 - (void)configureContentsView {
 
     // Calculate the size of the contents view
     int screenWidth  = self.view.bounds.size.width;
-    int contentWidth = screenWidth - 250;
-    
+    int contentWidth = 10;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        contentWidth = screenWidth - 320;
+    }
+
     // Set the size
     self.viewDeckController.leftLedge = contentWidth;
 
+}
+
+- (IBAction)showShareSheet:(id)sender {
+
+    NSArray* dataToShare = @[self.currentArticle.title, self.currentArticle.author];
+    
+    UIActivityViewController* activityViewController = [[UIActivityViewController alloc] initWithActivityItems:dataToShare
+                                                                                         applicationActivities:nil
+                                                        ];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.shareController = [[UIPopoverController alloc] initWithContentViewController:activityViewController];
+        [self.shareController presentPopoverFromRect:self.btnShare.frame
+                                              inView:self.view
+                            permittedArrowDirections:UIPopoverArrowDirectionUp
+                                            animated:YES
+         ];
+    } else {
+        [self presentViewController:activityViewController
+                           animated:YES
+                         completion:nil
+         ];
+    }
+    
 }
 
 @end

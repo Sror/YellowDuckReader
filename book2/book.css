@@ -67,10 +67,9 @@ a {
 
 .page {
     margin: 30px;
-    margin-left: 50px;
 }
 
-h1 {
+h1, .cover {
     font-family: 'PT Sans', sans-serif;
 }
 
@@ -78,8 +77,18 @@ p, li {
     font-family: 'PT Serif', serif;
 }
 
+img {
+    max-width: 280px;
+}
+
 /** iPad and Phones **/
-@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
-   /* CSS overrides for mobile here */
+@media screen and (max-device-width: 480px) {
+
+    .page {
+        margin: 10px;
+        font-size: 0.8em;
+    }
+
+
 }
 
