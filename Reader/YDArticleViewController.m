@@ -33,16 +33,8 @@
 //    self.articleView.backgroundColor = [UIColor clearColor];
 //    [self.articleView setOpaque:NO];
     
-    // Disable bouncing
-    for (UIView *subView in self.articleView.subviews) {
-        if ([subView isKindOfClass:[UIScrollView class]]) {
-            UIScrollView *indexScrollView = (UIScrollView*)subView;
-            indexScrollView.bounces = NO;
-            break;
-        }
-    }
-    
-    // Make ourselves the web viewer delegate
+    // Configure the web view
+    self.articleView.scrollView.bounces = NO;
     self.articleView.delegate = self;
     
     // Load the first article
