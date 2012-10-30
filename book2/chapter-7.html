@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Web design in a retina world</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="Author" content="Johan Ronsse" />
+        <link rel="stylesheet" type="text/css" href="book.css" />
+    </head>
+    <body>
+
+        <div class="page">
+
+            <h1>Web design in a retina world</h1>
+
+            <p>I&#8217;ve been meaning to write something about retina support ever since the new retina Macbook was announced. I made a lengthy comment over at <a href="http://www.baekdal.com/opinion/retina-displays-are-tricky-for-publishers/">Baekdal</a> discussing how to handle web design in a retina world. I&#8217;m reposting it here for posterity and hopefully to start a conversation.</p>
+            <p>When talking about retina graphics, I think a lot depends on what we&#8217;re talking about: layout, icons, charts, or photos.</p>
+            <p>For building layouts, I don&#8217;t think defining things in absolute widths (you [Baekdal] seem to love your centimeters) is the way of the future, mostly you&#8217;re going to want to use a clever combination of ems and percentages. We&#8217;re looking at a future where <a href="http://www.amazon.com/Defensive-Design-Web-improve-messages/dp/073571410X">defensive design for the web</a> is even more important than it used to be.</p>
+            <p>Using a combination of new CSS properties such as <code>flex-box</code>, <code>box-sizing</code> and <code>calc()</code> building these layouts will be a lot easier than it used to be (again, broad support is years away, to work in a way that works in all current browsers that matter you&#8217;re going to need to combine %-based widths with em-based widths using multiple <code>div</code>s)</p>
+            <p>For icons and charts &#8211; pixel fitting icons is not a thing of the past, even in this retina world, but it matters less. Icon fonts are getting big (and rightfully so) &#8211; charts should be made in SVG. Look at the chart in <a href="http://www.nytimes.com/interactive/2012/08/05/sports/olympics/the-100-meter-dash-one-race-every-medalist-ever.html">this NYTimes article</a>. Sweet SVG. Done properly icon fonts and SVG won&#8217;t negatively impact loading speeds, and they are infinitely scalable. One disadvantage is that it&#8217;s just harder to do (and thus less likely to be done).</p>
+            <p>For photos, you&#8217;re [Baekdal] saying &#8220;<em>Retina displays have four times the pixels, meaning every picture has to be four times as big.</em>&#8221; &#8211; this would be true if you really have to serve pictures in 100% quality without any JPG compression. I think for most purposes serving a 50% bigger image is just fine. A photograph doesn&#8217;t need to be four times as big to look sharp on a retina display. A 50% increase in resolution will already most photos already indistinguishable from the actual 200% version.</p>
+            <p>If you don&#8217;t believe me try visiting <a href="http://nerd.vasilis.nl/code/retina/">this test site</a> on an iPhone.  A 50% increase in resolution also doesn&#8217;t mean double the file size (see <a href="http://mir.aculo.us/2012/08/06/high-resolution-images-and-file-size">this article</a> and it&#8217;s <a href="http://retinafy.me/jpgs/">example photos</a>)</p>
+            <p>All my points aside, of course serving retina graphics will still increase page load speed. On a broadband connection this doesn&#8217;t really matter. A 14Mb article is nothing &#8212; we stream 1080p HD trailers, why not enjoy HD articles? &#8212; if you have a good connection.</p>
+            <p>What about the slow connections? There&#8217;s a big problem. Web developers need some way to figure out how good a connection is and serve approriately. My thinking is that browser makers should have a background process that tracks the available bandwidth. This property can be used in CSS media queries and Javascript (e.g. client.networkSpeed)</p>
+            <p>On my own website I&#8217;m making some assumptions in deciding whether to serve retina or not e.g. if you have a 24&#8243; screen you&#8217;re probably not mobile. This is a solution to make some bandwidth assumptions, but not a great one. For all I know you do have a large screen but are tethering at 3G or EDGE speeds.</p>
+
+        </div>
+
+    </body>
+
+</html>
