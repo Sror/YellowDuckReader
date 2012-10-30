@@ -26,7 +26,6 @@
 
     UIFont *interfaceFont  = [UIFont fontWithName:@"PTSans-Italic" size:15.0];
     self.author.font       = interfaceFont;
-    self.author.textColor  = [UIColor grayColor];
     
 }
 

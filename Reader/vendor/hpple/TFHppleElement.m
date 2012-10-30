@@ -62,7 +62,7 @@ static NSString * const TFHppleNodeAttributeNameKey     = @"attributeName";
 
 - (NSString *) content
 {
-  return [node objectForKey:TFHppleNodeContentKey];
+  return [[[node valueForKey:TFHppleNodeChildrenKey] objectAtIndex:0] valueForKey:TFHppleNodeContentKey];
 }
 
 

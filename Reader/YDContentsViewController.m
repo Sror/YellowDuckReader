@@ -55,9 +55,11 @@
     cell.title.text     = article.title;
     cell.author.text    = article.author;
     if ([article isEqual:self.currentArticle]) {
-        cell.title.textColor = [UIColor blackColor];
+        cell.title.textColor  = [UIColor blackColor];
+        cell.author.textColor = [UIColor blackColor];
     } else {
-        cell.title.textColor = [UIColor grayColor];
+        cell.title.textColor  = [UIColor grayColor];
+        cell.author.textColor = [UIColor grayColor];
     }
     return cell;
 }
