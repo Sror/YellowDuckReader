@@ -44,7 +44,14 @@
 		C6B6988A163EC63500CF239E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69880163EC63500CF239E /* Icon@2x.png */; };
 		C6B6988B163EC63500CF239E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69881163EC63500CF239E /* iTunesArtwork.png */; };
 		C6B6988C163EC63500CF239E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69882163EC63500CF239E /* iTunesArtwork@2x.png */; };
-		C6B6988E163EC7AE00CF239E /* chapter-3.html in Resources */ = {isa = PBXBuildFile; fileRef = C6B6988D163EC7AE00CF239E /* chapter-3.html */; };
+		C6B6989C163FBBA100CF239E /* PT_Sans-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69894163FBBA100CF239E /* PT_Sans-Web-Bold.ttf */; };
+		C6B6989D163FBBA100CF239E /* PT_Sans-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69895163FBBA100CF239E /* PT_Sans-Web-BoldItalic.ttf */; };
+		C6B6989E163FBBA100CF239E /* PT_Sans-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69896163FBBA100CF239E /* PT_Sans-Web-Italic.ttf */; };
+		C6B6989F163FBBA100CF239E /* PT_Sans-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69897163FBBA100CF239E /* PT_Sans-Web-Regular.ttf */; };
+		C6B698A0163FBBA100CF239E /* PT_Serif-Web-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69898163FBBA100CF239E /* PT_Serif-Web-Bold.ttf */; };
+		C6B698A1163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69899163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf */; };
+		C6B698A2163FBBA100CF239E /* PT_Serif-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B6989A163FBBA100CF239E /* PT_Serif-Web-Italic.ttf */; };
+		C6B698A3163FBBA100CF239E /* PT_Serif-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B6989B163FBBA100CF239E /* PT_Serif-Web-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,7 +105,14 @@
 		C6B69880163EC63500CF239E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		C6B69881163EC63500CF239E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		C6B69882163EC63500CF239E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
-		C6B6988D163EC7AE00CF239E /* chapter-3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "chapter-3.html"; path = "book2/chapter-3.html"; sourceTree = "<group>"; };
+		C6B69894163FBBA100CF239E /* PT_Sans-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Bold.ttf"; sourceTree = "<group>"; };
+		C6B69895163FBBA100CF239E /* PT_Sans-Web-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C6B69896163FBBA100CF239E /* PT_Sans-Web-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Italic.ttf"; sourceTree = "<group>"; };
+		C6B69897163FBBA100CF239E /* PT_Sans-Web-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Sans-Web-Regular.ttf"; sourceTree = "<group>"; };
+		C6B69898163FBBA100CF239E /* PT_Serif-Web-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-Bold.ttf"; sourceTree = "<group>"; };
+		C6B69899163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-BoldItalic.ttf"; sourceTree = "<group>"; };
+		C6B6989A163FBBA100CF239E /* PT_Serif-Web-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-Italic.ttf"; sourceTree = "<group>"; };
+		C6B6989B163FBBA100CF239E /* PT_Serif-Web-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +134,6 @@
 		C6B697ED163E89E900CF239E = {
 			isa = PBXGroup;
 			children = (
-				C6B6988D163EC7AE00CF239E /* chapter-3.html */,
 				C6B69824163E8B0800CF239E /* book */,
 				C6B69866163EB5FB00CF239E /* book2 */,
 				C6B69802163E89E900CF239E /* Reader */,
@@ -152,6 +165,7 @@
 		C6B69802163E89E900CF239E /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				C6B69893163FBBA000CF239E /* fonts */,
 				C6B69833163EA14A00CF239E /* images */,
 				C6B69827163E8B7800CF239E /* model */,
 				C6B6982B163E905800CF239E /* views */,
@@ -262,6 +276,21 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		C6B69893163FBBA000CF239E /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69894163FBBA100CF239E /* PT_Sans-Web-Bold.ttf */,
+				C6B69895163FBBA100CF239E /* PT_Sans-Web-BoldItalic.ttf */,
+				C6B69896163FBBA100CF239E /* PT_Sans-Web-Italic.ttf */,
+				C6B69897163FBBA100CF239E /* PT_Sans-Web-Regular.ttf */,
+				C6B69898163FBBA100CF239E /* PT_Serif-Web-Bold.ttf */,
+				C6B69899163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf */,
+				C6B6989A163FBBA100CF239E /* PT_Serif-Web-Italic.ttf */,
+				C6B6989B163FBBA100CF239E /* PT_Serif-Web-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,7 +364,14 @@
 				C6B6988A163EC63500CF239E /* Icon@2x.png in Resources */,
 				C6B6988B163EC63500CF239E /* iTunesArtwork.png in Resources */,
 				C6B6988C163EC63500CF239E /* iTunesArtwork@2x.png in Resources */,
-				C6B6988E163EC7AE00CF239E /* chapter-3.html in Resources */,
+				C6B6989C163FBBA100CF239E /* PT_Sans-Web-Bold.ttf in Resources */,
+				C6B6989D163FBBA100CF239E /* PT_Sans-Web-BoldItalic.ttf in Resources */,
+				C6B6989E163FBBA100CF239E /* PT_Sans-Web-Italic.ttf in Resources */,
+				C6B6989F163FBBA100CF239E /* PT_Sans-Web-Regular.ttf in Resources */,
+				C6B698A0163FBBA100CF239E /* PT_Serif-Web-Bold.ttf in Resources */,
+				C6B698A1163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf in Resources */,
+				C6B698A2163FBBA100CF239E /* PT_Serif-Web-Italic.ttf in Resources */,
+				C6B698A3163FBBA100CF239E /* PT_Serif-Web-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,4 +1,85 @@
-.title-page { text-align: center; }
-h1 { line-height: 1.4em; }
-.page	{ margin: 30px; margin-left: 50px; line-height: 1.4em; }
-body { font-family: "HoeflerText-Regular" }
+/** Fonts **/
+
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url(fonts/PT_Sans-Web-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('PT Sans Italic'), local('PTSans-Italic'), url(fonts/PT_Sans-Web-Italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url(fonts/PT_Sans-Web-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('PT Sans Bold Italic'), local('PTSans-BoldItalic'), url(fonts/PT_Sans-Web-BoldItalic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Serif'), local('PTSerif-Regular'), url(fonts/PT_Serif-Web-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 400;
+  src: local('PT Serif Italic'), local('PTSerif-Italic'), url(fonts/PT_Serif-Web-Italic.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Serif Bold'), local('PTSerif-Bold'), url(fonts/PT_Serif-Web-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'PT Serif';
+  font-style: italic;
+  font-weight: 700;
+  src: local('PT Serif Bold Italic'), local('PTSerif-BoldItalic'), url(fonts/PT_Serif-Web-BoldItalic.ttf) format('truetype');
+}
+
+/** General classes **/
+
+.center {
+    text-align: center;
+}
+
+h1, .page {
+    line-height: 1.4em;
+}
+
+a {
+    text-decoration: none;
+    color: navy;
+}
+
+.page {
+    margin: 30px;
+    margin-left: 50px;
+}
+
+h1 {
+    font-family: 'PT Sans', sans-serif;
+}
+
+p {
+    font-family: 'PT Serif', serif;
+}
+
+/** iPad and Phones **/
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+   /* CSS overrides for mobile here */
+}
+

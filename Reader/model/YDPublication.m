@@ -40,9 +40,6 @@
     }
     self.articles = articles;
     
-    //self.articles = [metaInfo valueForKey:@"contents"];
-    //NSLog(@"%@, %d article(s)", self.title, self.articles.count);
-    
 }
 
 @end
@@ -67,15 +64,24 @@
     return self;
 }
 
-- (NSString*)articleAtIndex:(int)index {
+- (YDArticle*)articleWithName:(NSString*)articleName {
+    for (YDArticle *article in self.articles) {
+        if ([article.name isEqualToString:articleName]) {
+            return article;
+        }
+    }
+    return nil;
+}
+
+- (YDArticle*)articleAtIndex:(int)index {
     return [self.articles objectAtIndex:index];
 }
 
 - (int)indexOfArticle:(NSString*)articleName {
     int index = -1;
-    for (NSString *article in self.articles) {
+    for (YDArticle *article in self.articles) {
         index++;
-        if ([article isEqualToString:articleName]) {
+        if ([article.name isEqualToString:articleName]) {
             return index;
         }
     }
@@ -83,7 +89,7 @@
 }
 
 - (NSString*)description {
-    return [NSString stringWithFormat:@"Publication: %@ (%d articles)", self.title, self.articles.count];
+    return [NSString stringWithFormat:@"<YDPublication: %@>", self.title];
 }
 
 @end

@@ -11,6 +11,7 @@
 #import "YDArticle.h"
 #import "YDContentCell.h"
 #import "YDPublicationViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation YDContentsViewController
 
@@ -23,9 +24,22 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     UINib *contentCellNib = [UINib nibWithNibName:@"YDContentCell" bundle:nil];
     [self.contentsTable registerNib:contentCellNib forCellReuseIdentifier:@"YDContentCell"];
+    
+    UIFont *interfaceFont = [UIFont fontWithName:@"PT Sans" size:17.0];
+    self.lblMagazine.font = interfaceFont;
+    
+//    self.lblMagazine.layer.masksToBounds = NO;
+//    self.lblMagazine.layer.shadowRadius = 10;
+//    self.lblMagazine.layer.shadowOpacity = 0.5;
+//    self.lblMagazine.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.lblMagazine.layer.shadowOffset = CGSizeZero;
+//    self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
+
 }
 
 #pragma mark - UITableViewDataSource
@@ -55,8 +69,8 @@
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSString *articleName = [self.publication.articles objectAtIndex:indexPath.row];
-    [self.viewDeckController loadArticle:articleName];
+    YDArticle *article = [self.publication.articles objectAtIndex:indexPath.row];
+    [self.viewDeckController loadArticle:article];
 }
 
 #pragma mark - Helpers

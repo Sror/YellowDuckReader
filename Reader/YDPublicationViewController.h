@@ -18,6 +18,6 @@
 - (id)initWithPublication:(YDPublication*)publication;
 
 - (void)willLoadArticle:(YDArticle*)article;
-- (void)loadArticle:(NSString*)articleName;
+- (void)loadArticle:(YDArticle*)article;
 
 @end

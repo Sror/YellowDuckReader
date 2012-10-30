@@ -1,25 +1,11 @@
 {
-    "hpub": 1,
     "title": "Second Book",
-    "author": ["krisix"],
-    "creator": ["krisix"],
-    "date": "2012-09-15",
-    "url": "book://tenkai.pl/baker-s/2",
-
     "orientation": "both",
-    "zoomable": false,
-
-    "-baker-background": "#000000",
-    "-baker-vertical-bounce": true,
-    "-baker-media-autoplay": true,
-    "-baker-background-image-portrait": "gfx/background-portrait.png",
-    "-baker-background-image-landscape": "gfx/background-landscape.png",
-    "-baker-page-numbers-color": "#000000",
-
     "contents": [
         "cover.html",
         "chapter-1.html",
         "chapter-2.html",
         "chapter-3.html",
+        "chapter-4.html"
     ]
 }

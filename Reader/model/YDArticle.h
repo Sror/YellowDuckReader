@@ -12,6 +12,7 @@
 
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *path;
+@property (nonatomic,strong) NSString *name;
 
 - (id)initWithPath:(NSString*)path;
 

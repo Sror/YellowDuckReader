@@ -16,6 +16,7 @@
 
 @property (nonatomic,strong) YDPublication *publication;
 @property (nonatomic,strong) YDArticle *currentArticle;
+@property (nonatomic,strong) IBOutlet UILabel *lblMagazine;
 @property (nonatomic,strong) IBOutlet UITableView *contentsTable;
 @property (nonatomic,strong) YDPublicationViewController *viewDeckController;
 

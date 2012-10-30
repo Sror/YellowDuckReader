@@ -58,8 +58,6 @@
 - (void)loadArticle:(YDArticle*)article fromPublication:(YDPublication*)publication {
     NSLog(@"Loading %@ from %@", article, publication);
     self.currentArticle = article;
-    [self.viewDeckController willLoadArticle:article];
-    [self startLoadingArticle:article];
     NSURL *articleURL = [NSURL fileURLWithPath:article.path];
     [self.articleView loadRequest:[NSURLRequest requestWithURL:articleURL]];
 }
@@ -84,7 +82,7 @@
     
     // Mailto request
     if ([request.URL.scheme isEqual:@"mailto"]) {
-        NSString *recipient =[request.URL.absoluteString substringFromIndex:7];
+        NSString *recipient = [request.URL.absoluteString substringFromIndex:7];
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate    = self;
 		[controller setToRecipients:@[recipient]];
@@ -96,6 +94,15 @@
     if ([request.URL.scheme isEqual:@"http"] == YES || [request.URL.scheme isEqual:@"https"] == YES) {
         [[UIApplication sharedApplication] openURL:request.URL];
         return NO;
+    }
+    
+    // Internal URL
+    if ([request.URL.scheme isEqualToString:@"file"]) {
+        NSString *articleName = request.URL.absoluteString.lastPathComponent;
+        YDArticle *article    = [self.publication articleWithName:articleName];
+        [self startLoadingArticle:article];
+        [self.viewDeckController willLoadArticle:article];
+        return YES;
     }
     
     // Follow the link

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class YDArticle;
+
 @interface YDPublication : NSObject
 
 @property (nonatomic,strong) NSString *path;
@@ -16,6 +18,7 @@
 
 - (id)initWithPath:(NSString*)path;
 
+- (YDArticle*)articleWithName:(NSString*)name;
 - (NSString*)articleAtIndex:(int)index;
 - (int)indexOfArticle:(NSString*)articleName;
 

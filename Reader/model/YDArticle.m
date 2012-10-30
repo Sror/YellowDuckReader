@@ -43,9 +43,10 @@
         
         // Assign the variables
         _path = path;
+        _name = path.lastPathComponent;
         
         // Set the default variables
-        _title    = @"";
+        _title = @"";
         
         // Parse the publication
         [self parse];
@@ -59,7 +60,7 @@
 }
 
 - (NSString*)description {
-    return [NSString stringWithFormat:@"Article: %@", self.title];
+    return [NSString stringWithFormat:@"<YDArticle: %@>", self.title];
 }
 
 @end
