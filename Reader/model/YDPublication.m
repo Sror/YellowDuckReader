@@ -14,7 +14,7 @@
 - (void)parse {
     
     // Get the path to the metadata file
-    NSString *metaFile = [self.path stringByAppendingPathComponent:@"book.json"];
+    NSString *metaFile = [self.path stringByAppendingPathComponent:@"publication.json"];
     
     // Parse the metafile
     NSError *error = nil;

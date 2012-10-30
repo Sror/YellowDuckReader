@@ -77,10 +77,6 @@ p, li {
     font-family: 'PT Serif', serif;
 }
 
-img {
-    max-width: 280px;
-}
-
 /** iPad and Phones **/
 @media screen and (max-device-width: 480px) {
 
@@ -88,7 +84,23 @@ img {
         margin: 10px;
         font-size: 0.8em;
     }
-
+    
 
 }
 
+@media screen and (max-device-width: 480px) and (orientation:portrait) {
+
+    img {
+        max-width: 280px;
+    }
+
+}
+
+
+@media screen and (max-device-width: 960px) and (orientation:landscape) {
+    
+    img {
+        max-width: 900px;
+    }
+    
+}

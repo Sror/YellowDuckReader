@@ -165,10 +165,14 @@
     int contentWidth = 10;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         contentWidth = screenWidth - 320;
+    } else {
+        if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+            contentWidth = screenWidth - 320;
+        }
     }
 
     // Set the size
-    self.viewDeckController.leftLedge = contentWidth;
+    self.viewDeckController.leftSize = contentWidth;
 
 }
 
