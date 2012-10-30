@@ -33,12 +33,12 @@
     UIFont *interfaceFont = [UIFont fontWithName:@"PT Sans" size:17.0];
     self.lblMagazine.font = interfaceFont;
     
-//    self.lblMagazine.layer.masksToBounds = NO;
-//    self.lblMagazine.layer.shadowRadius = 10;
-//    self.lblMagazine.layer.shadowOpacity = 0.5;
-//    self.lblMagazine.layer.shadowColor = [[UIColor blackColor] CGColor];
-//    self.lblMagazine.layer.shadowOffset = CGSizeZero;
-//    self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
+    self.lblMagazine.layer.masksToBounds = NO;
+    self.lblMagazine.layer.shadowRadius = 10;
+    self.lblMagazine.layer.shadowOpacity = 0.5;
+    self.lblMagazine.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.lblMagazine.layer.shadowOffset = CGSizeZero;
+    self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
 
 }
 
@@ -53,6 +53,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     YDArticle *article  = [self.publication.articles objectAtIndex:indexPath.row];
     cell.title.text     = article.title;
+    cell.author.text    = article.author;
     if ([article isEqual:self.currentArticle]) {
         cell.title.textColor = [UIColor blackColor];
     } else {

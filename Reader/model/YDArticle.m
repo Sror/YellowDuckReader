@@ -8,28 +8,69 @@
 
 #import "YDArticle.h"
 #import "GTMNSString+HTML.h"
+#import "TFHpple.h"
 
 @implementation YDArticle (Private)
 
 - (void)parse {
 
+    // Parse the HTML data
+    NSData *data    = [[NSData alloc] initWithContentsOfFile:self.path];
+    TFHpple *parser = [[TFHpple alloc] initWithHTMLData:data];
+    NSLog(@"%@", self.path);
+    
+    // Get the title elements
+    NSArray *titleTags       = [parser searchWithXPathQuery:@"//title"];
+    if (titleTags.count > 0) {
+        TFHppleElement *titleTag = [titleTags objectAtIndex:0];
+        NSLog(@"T: %@", [titleTag content]);
+        if (titleTag.content != nil && [titleTag.content isEqualToString:@""] == NO) {
+            self.title = titleTag.content;
+        }
+    }
+    
+    // Get the meta tags
+    NSArray *metaTags = [parser searchWithXPathQuery:@"//meta"];
+    for (TFHppleElement *metaTag in metaTags) {
+        NSLog(@"M: %@", metaTag.attributes);
+        if ([[metaTag.attributes valueForKey:@"name"] isEqualToString:@"author"] == YES) {
+            NSLog(@"%@", metaTag);
+        }
+    }
+    
+    /*
     // Read the HTML
     NSString *html = [NSString stringWithContentsOfFile:self.path
                                                encoding:NSUTF8StringEncoding
                                                   error:nil
                       ];
     
-    // Find the title in the HTML
-    NSRange r = [html rangeOfString:@"<title>"];
-    if (r.location != NSNotFound) {
-        NSRange r1 = [html rangeOfString:@"</title>"];
-        if (r1.location != NSNotFound) {
-            if (r1.location > r.location) {
-                NSString *title = [html substringWithRange:NSMakeRange(NSMaxRange(r), r1.location - NSMaxRange(r))];
-                self.title = [title gtm_stringByUnescapingFromHTML];
-            }
+    // Parse the HTML
+    NSError *error = nil;
+    HTMLParser *parser = [[HTMLParser alloc] initWithString:html error:&error];
+    if (error) {
+        NSLog(@"Error: %@", error);
+        return;
+    }
+    
+    // Get the head element
+    HTMLNode *head = parser.head;
+    
+    // Parse the title
+    HTMLNode *titleTag = [head findChildTag:@"title"];
+    if ([titleTag.contents isEqualToString:@""] == NO) {
+        self.title = titleTag.contents;
+    }
+    
+    // Parse the author
+    NSArray *metaTags = [parser.html findChildTags:@"meta"];
+    NSLog(@"%d %@", metaTags.count, self.name);
+    for (HTMLNode *metaTag in metaTags) {
+        if ([[[metaTag getAttributeNamed:@"name"] lowercaseString] isEqualToString:@"author"]) {
+            self.author = [metaTag getAttributeNamed:@"content"];
         }
     }
+    */
 
 }
 
@@ -46,7 +87,8 @@
         _name = path.lastPathComponent;
         
         // Set the default variables
-        _title = @"";
+        _title  = [_name stringByDeletingPathExtension];
+        _author = @"";
         
         // Parse the publication
         [self parse];

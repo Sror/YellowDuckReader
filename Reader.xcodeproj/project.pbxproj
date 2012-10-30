@@ -52,6 +52,10 @@
 		C6B698A1163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B69899163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf */; };
 		C6B698A2163FBBA100CF239E /* PT_Serif-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B6989A163FBBA100CF239E /* PT_Serif-Web-Italic.ttf */; };
 		C6B698A3163FBBA100CF239E /* PT_Serif-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6B6989B163FBBA100CF239E /* PT_Serif-Web-Regular.ttf */; };
+		C6B698AE163FC30000CF239E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B698AD163FC30000CF239E /* libxml2.dylib */; };
+		C6B698B6163FC8CF00CF239E /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B698B1163FC8CF00CF239E /* TFHpple.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C6B698B7163FC8CF00CF239E /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B698B3163FC8CF00CF239E /* TFHppleElement.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C6B698B8163FC8CF00CF239E /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B698B5163FC8CF00CF239E /* XPathQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +117,13 @@
 		C6B69899163FBBA100CF239E /* PT_Serif-Web-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C6B6989A163FBBA100CF239E /* PT_Serif-Web-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-Italic.ttf"; sourceTree = "<group>"; };
 		C6B6989B163FBBA100CF239E /* PT_Serif-Web-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PT_Serif-Web-Regular.ttf"; sourceTree = "<group>"; };
+		C6B698AD163FC30000CF239E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		C6B698B0163FC8CF00CF239E /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		C6B698B1163FC8CF00CF239E /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		C6B698B2163FC8CF00CF239E /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		C6B698B3163FC8CF00CF239E /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		C6B698B4163FC8CF00CF239E /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		C6B698B5163FC8CF00CF239E /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B698AE163FC30000CF239E /* libxml2.dylib in Frameworks */,
 				C6B6986D163EBC8600CF239E /* MessageUI.framework in Frameworks */,
 				C6B69849163EA37D00CF239E /* QuartzCore.framework in Frameworks */,
 				C6B697FD163E89E900CF239E /* UIKit.framework in Frameworks */,
@@ -153,6 +165,7 @@
 		C6B697FB163E89E900CF239E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6B698AD163FC30000CF239E /* libxml2.dylib */,
 				C6B6986C163EBC8600CF239E /* MessageUI.framework */,
 				C6B69848163EA37D00CF239E /* QuartzCore.framework */,
 				C6B697FC163E89E900CF239E /* UIKit.framework */,
@@ -233,6 +246,7 @@
 		C6B69836163EA14B00CF239E /* vendor */ = {
 			isa = PBXGroup;
 			children = (
+				C6B698AF163FC8CF00CF239E /* hpple */,
 				C6B69859163EB27C00CF239E /* GoogleToolboxMac */,
 				C6B69841163EA36300CF239E /* ViewDeck */,
 			);
@@ -289,6 +303,19 @@
 				C6B6989B163FBBA100CF239E /* PT_Serif-Web-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		C6B698AF163FC8CF00CF239E /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				C6B698B0163FC8CF00CF239E /* TFHpple.h */,
+				C6B698B1163FC8CF00CF239E /* TFHpple.m */,
+				C6B698B2163FC8CF00CF239E /* TFHppleElement.h */,
+				C6B698B3163FC8CF00CF239E /* TFHppleElement.m */,
+				C6B698B4163FC8CF00CF239E /* XPathQuery.h */,
+				C6B698B5163FC8CF00CF239E /* XPathQuery.m */,
+			);
+			path = hpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +420,9 @@
 				C6B69858163EAE4500CF239E /* YDArticle.m in Sources */,
 				C6B6985C163EB27C00CF239E /* GTMNSString+HTML.m in Sources */,
 				C6B6985F163EB32800CF239E /* YDContentCell.m in Sources */,
+				C6B698B6163FC8CF00CF239E /* TFHpple.m in Sources */,
+				C6B698B7163FC8CF00CF239E /* TFHppleElement.m in Sources */,
+				C6B698B8163FC8CF00CF239E /* XPathQuery.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +506,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reader/Reader-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Reader/Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -489,6 +520,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reader/Reader-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "Reader/Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

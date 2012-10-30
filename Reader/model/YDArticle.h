@@ -11,6 +11,7 @@
 @interface YDArticle : NSObject
 
 @property (nonatomic,strong) NSString *title;
+@property (nonatomic,strong) NSString *author;
 @property (nonatomic,strong) NSString *path;
 @property (nonatomic,strong) NSString *name;
 
