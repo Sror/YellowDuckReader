@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class YDViewController;
+@class YDPublicationViewController;
 
 @interface YDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) YDViewController *viewController;
+@property (strong, nonatomic) YDPublicationViewController *viewController;
 
 @end

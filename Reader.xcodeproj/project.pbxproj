@@ -16,11 +16,35 @@
 		C6B6980F163E89EA00CF239E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6980E163E89EA00CF239E /* Default.png */; };
 		C6B69811163E89EA00CF239E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69810163E89EA00CF239E /* Default@2x.png */; };
 		C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69812163E89EA00CF239E /* Default-568h@2x.png */; };
-		C6B69816163E89EA00CF239E /* YDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69815163E89EA00CF239E /* YDViewController.m */; };
-		C6B69819163E89EA00CF239E /* YDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69817163E89EA00CF239E /* YDViewController.xib */; };
+		C6B69816163E89EA00CF239E /* YDArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69815163E89EA00CF239E /* YDArticleViewController.m */; };
+		C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69817163E89EA00CF239E /* YDArticleViewController.xib */; };
 		C6B69825163E8B0800CF239E /* book in Resources */ = {isa = PBXBuildFile; fileRef = C6B69824163E8B0800CF239E /* book */; };
 		C6B6982A163E8BC300CF239E /* YDPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69829163E8BC300CF239E /* YDPublication.m */; };
-		C6B6982E163E907D00CF239E /* YDArticleViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6982D163E907D00CF239E /* YDArticleViewCell.m */; };
+		C6B69837163EA14B00CF239E /* MenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69834163EA14B00CF239E /* MenuIcon.png */; };
+		C6B69838163EA14B00CF239E /* MenuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69835163EA14B00CF239E /* MenuIcon@2x.png */; };
+		C6B69846163EA36300CF239E /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69843163EA36300CF239E /* IIViewDeckController.m */; };
+		C6B69847163EA36300CF239E /* WrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69845163EA36300CF239E /* WrapController.m */; };
+		C6B69849163EA37D00CF239E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B69848163EA37D00CF239E /* QuartzCore.framework */; };
+		C6B6984D163EA3E400CF239E /* YDContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6984B163EA3E300CF239E /* YDContentsViewController.m */; };
+		C6B6984E163EA3E400CF239E /* YDContentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B6984C163EA3E300CF239E /* YDContentsViewController.xib */; };
+		C6B69851163EA44000CF239E /* YDPublicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69850163EA44000CF239E /* YDPublicationViewController.m */; };
+		C6B69858163EAE4500CF239E /* YDArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69857163EAE4500CF239E /* YDArticle.m */; };
+		C6B6985C163EB27C00CF239E /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6985B163EB27C00CF239E /* GTMNSString+HTML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C6B6985F163EB32800CF239E /* YDContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6985E163EB32800CF239E /* YDContentCell.m */; };
+		C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69860163EB35100CF239E /* YDContentCell.xib */; };
+		C6B69867163EB5FB00CF239E /* book2 in Resources */ = {isa = PBXBuildFile; fileRef = C6B69866163EB5FB00CF239E /* book2 */; };
+		C6B6986D163EBC8600CF239E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B6986C163EBC8600CF239E /* MessageUI.framework */; };
+		C6B69883163EC63500CF239E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69879163EC63500CF239E /* Icon-72.png */; };
+		C6B69884163EC63500CF239E /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987A163EC63500CF239E /* Icon-72@2x.png */; };
+		C6B69885163EC63500CF239E /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987B163EC63500CF239E /* Icon-Small-50.png */; };
+		C6B69886163EC63500CF239E /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987C163EC63500CF239E /* Icon-Small-50@2x.png */; };
+		C6B69887163EC63500CF239E /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987D163EC63500CF239E /* Icon-Small.png */; };
+		C6B69888163EC63500CF239E /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987E163EC63500CF239E /* Icon-Small@2x.png */; };
+		C6B69889163EC63500CF239E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987F163EC63500CF239E /* Icon.png */; };
+		C6B6988A163EC63500CF239E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69880163EC63500CF239E /* Icon@2x.png */; };
+		C6B6988B163EC63500CF239E /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69881163EC63500CF239E /* iTunesArtwork.png */; };
+		C6B6988C163EC63500CF239E /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69882163EC63500CF239E /* iTunesArtwork@2x.png */; };
+		C6B6988E163EC7AE00CF239E /* chapter-3.html in Resources */ = {isa = PBXBuildFile; fileRef = C6B6988D163EC7AE00CF239E /* chapter-3.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,14 +61,44 @@
 		C6B6980E163E89EA00CF239E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		C6B69810163E89EA00CF239E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C6B69812163E89EA00CF239E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		C6B69814163E89EA00CF239E /* YDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDViewController.h; sourceTree = "<group>"; };
-		C6B69815163E89EA00CF239E /* YDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDViewController.m; sourceTree = "<group>"; };
-		C6B69818163E89EA00CF239E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YDViewController.xib; sourceTree = "<group>"; };
+		C6B69814163E89EA00CF239E /* YDArticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDArticleViewController.h; sourceTree = "<group>"; };
+		C6B69815163E89EA00CF239E /* YDArticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YDArticleViewController.m; sourceTree = "<group>"; };
+		C6B69818163E89EA00CF239E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YDArticleViewController.xib; sourceTree = "<group>"; };
 		C6B69824163E8B0800CF239E /* book */ = {isa = PBXFileReference; lastKnownFileType = folder; path = book; sourceTree = "<group>"; };
 		C6B69828163E8BC300CF239E /* YDPublication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDPublication.h; sourceTree = "<group>"; };
 		C6B69829163E8BC300CF239E /* YDPublication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPublication.m; sourceTree = "<group>"; };
-		C6B6982C163E907D00CF239E /* YDArticleViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDArticleViewCell.h; sourceTree = "<group>"; };
-		C6B6982D163E907D00CF239E /* YDArticleViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDArticleViewCell.m; sourceTree = "<group>"; };
+		C6B69834163EA14B00CF239E /* MenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuIcon.png; sourceTree = "<group>"; };
+		C6B69835163EA14B00CF239E /* MenuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuIcon@2x.png"; sourceTree = "<group>"; };
+		C6B69842163EA36300CF239E /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		C6B69843163EA36300CF239E /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		C6B69844163EA36300CF239E /* WrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapController.h; sourceTree = "<group>"; };
+		C6B69845163EA36300CF239E /* WrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WrapController.m; sourceTree = "<group>"; };
+		C6B69848163EA37D00CF239E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C6B6984A163EA3E300CF239E /* YDContentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDContentsViewController.h; sourceTree = "<group>"; };
+		C6B6984B163EA3E300CF239E /* YDContentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDContentsViewController.m; sourceTree = "<group>"; };
+		C6B6984C163EA3E300CF239E /* YDContentsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDContentsViewController.xib; sourceTree = "<group>"; };
+		C6B6984F163EA44000CF239E /* YDPublicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDPublicationViewController.h; sourceTree = "<group>"; };
+		C6B69850163EA44000CF239E /* YDPublicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPublicationViewController.m; sourceTree = "<group>"; };
+		C6B69856163EAE4500CF239E /* YDArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDArticle.h; sourceTree = "<group>"; };
+		C6B69857163EAE4500CF239E /* YDArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDArticle.m; sourceTree = "<group>"; };
+		C6B6985A163EB27C00CF239E /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		C6B6985B163EB27C00CF239E /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		C6B6985D163EB32800CF239E /* YDContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDContentCell.h; sourceTree = "<group>"; };
+		C6B6985E163EB32800CF239E /* YDContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDContentCell.m; sourceTree = "<group>"; };
+		C6B69860163EB35100CF239E /* YDContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDContentCell.xib; sourceTree = "<group>"; };
+		C6B69866163EB5FB00CF239E /* book2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = book2; sourceTree = "<group>"; };
+		C6B6986C163EBC8600CF239E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C6B69879163EC63500CF239E /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		C6B6987A163EC63500CF239E /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
+		C6B6987B163EC63500CF239E /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		C6B6987C163EC63500CF239E /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
+		C6B6987D163EC63500CF239E /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		C6B6987E163EC63500CF239E /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		C6B6987F163EC63500CF239E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		C6B69880163EC63500CF239E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		C6B69881163EC63500CF239E /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		C6B69882163EC63500CF239E /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		C6B6988D163EC7AE00CF239E /* chapter-3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "chapter-3.html"; path = "book2/chapter-3.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6B6986D163EBC8600CF239E /* MessageUI.framework in Frameworks */,
+				C6B69849163EA37D00CF239E /* QuartzCore.framework in Frameworks */,
 				C6B697FD163E89E900CF239E /* UIKit.framework in Frameworks */,
 				C6B697FF163E89E900CF239E /* Foundation.framework in Frameworks */,
 				C6B69801163E89E900CF239E /* CoreGraphics.framework in Frameworks */,
@@ -64,7 +120,9 @@
 		C6B697ED163E89E900CF239E = {
 			isa = PBXGroup;
 			children = (
+				C6B6988D163EC7AE00CF239E /* chapter-3.html */,
 				C6B69824163E8B0800CF239E /* book */,
+				C6B69866163EB5FB00CF239E /* book2 */,
 				C6B69802163E89E900CF239E /* Reader */,
 				C6B697FB163E89E900CF239E /* Frameworks */,
 				C6B697F9163E89E900CF239E /* Products */,
@@ -82,6 +140,8 @@
 		C6B697FB163E89E900CF239E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6B6986C163EBC8600CF239E /* MessageUI.framework */,
+				C6B69848163EA37D00CF239E /* QuartzCore.framework */,
 				C6B697FC163E89E900CF239E /* UIKit.framework */,
 				C6B697FE163E89E900CF239E /* Foundation.framework */,
 				C6B69800163E89E900CF239E /* CoreGraphics.framework */,
@@ -92,13 +152,20 @@
 		C6B69802163E89E900CF239E /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				C6B69833163EA14A00CF239E /* images */,
 				C6B69827163E8B7800CF239E /* model */,
 				C6B6982B163E905800CF239E /* views */,
+				C6B69836163EA14B00CF239E /* vendor */,
 				C6B6980B163E89EA00CF239E /* YDAppDelegate.h */,
 				C6B6980C163E89EA00CF239E /* YDAppDelegate.m */,
-				C6B69814163E89EA00CF239E /* YDViewController.h */,
-				C6B69815163E89EA00CF239E /* YDViewController.m */,
-				C6B69817163E89EA00CF239E /* YDViewController.xib */,
+				C6B6984F163EA44000CF239E /* YDPublicationViewController.h */,
+				C6B69850163EA44000CF239E /* YDPublicationViewController.m */,
+				C6B69814163E89EA00CF239E /* YDArticleViewController.h */,
+				C6B69815163E89EA00CF239E /* YDArticleViewController.m */,
+				C6B69817163E89EA00CF239E /* YDArticleViewController.xib */,
+				C6B6984A163EA3E300CF239E /* YDContentsViewController.h */,
+				C6B6984B163EA3E300CF239E /* YDContentsViewController.m */,
+				C6B6984C163EA3E300CF239E /* YDContentsViewController.xib */,
 				C6B69803163E89E900CF239E /* Supporting Files */,
 			);
 			path = Reader;
@@ -123,6 +190,8 @@
 			children = (
 				C6B69828163E8BC300CF239E /* YDPublication.h */,
 				C6B69829163E8BC300CF239E /* YDPublication.m */,
+				C6B69856163EAE4500CF239E /* YDArticle.h */,
+				C6B69857163EAE4500CF239E /* YDArticle.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -130,10 +199,67 @@
 		C6B6982B163E905800CF239E /* views */ = {
 			isa = PBXGroup;
 			children = (
-				C6B6982C163E907D00CF239E /* YDArticleViewCell.h */,
-				C6B6982D163E907D00CF239E /* YDArticleViewCell.m */,
+				C6B6985D163EB32800CF239E /* YDContentCell.h */,
+				C6B6985E163EB32800CF239E /* YDContentCell.m */,
+				C6B69860163EB35100CF239E /* YDContentCell.xib */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		C6B69833163EA14A00CF239E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69878163EC63500CF239E /* icons */,
+				C6B69834163EA14B00CF239E /* MenuIcon.png */,
+				C6B69835163EA14B00CF239E /* MenuIcon@2x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		C6B69836163EA14B00CF239E /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69859163EB27C00CF239E /* GoogleToolboxMac */,
+				C6B69841163EA36300CF239E /* ViewDeck */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		C6B69841163EA36300CF239E /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69842163EA36300CF239E /* IIViewDeckController.h */,
+				C6B69843163EA36300CF239E /* IIViewDeckController.m */,
+				C6B69844163EA36300CF239E /* WrapController.h */,
+				C6B69845163EA36300CF239E /* WrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
+		C6B69859163EB27C00CF239E /* GoogleToolboxMac */ = {
+			isa = PBXGroup;
+			children = (
+				C6B6985A163EB27C00CF239E /* GTMNSString+HTML.h */,
+				C6B6985B163EB27C00CF239E /* GTMNSString+HTML.m */,
+			);
+			path = GoogleToolboxMac;
+			sourceTree = "<group>";
+		};
+		C6B69878163EC63500CF239E /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				C6B69879163EC63500CF239E /* Icon-72.png */,
+				C6B6987A163EC63500CF239E /* Icon-72@2x.png */,
+				C6B6987B163EC63500CF239E /* Icon-Small-50.png */,
+				C6B6987C163EC63500CF239E /* Icon-Small-50@2x.png */,
+				C6B6987D163EC63500CF239E /* Icon-Small.png */,
+				C6B6987E163EC63500CF239E /* Icon-Small@2x.png */,
+				C6B6987F163EC63500CF239E /* Icon.png */,
+				C6B69880163EC63500CF239E /* Icon@2x.png */,
+				C6B69881163EC63500CF239E /* iTunesArtwork.png */,
+				C6B69882163EC63500CF239E /* iTunesArtwork@2x.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,8 +318,24 @@
 				C6B6980F163E89EA00CF239E /* Default.png in Resources */,
 				C6B69811163E89EA00CF239E /* Default@2x.png in Resources */,
 				C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */,
-				C6B69819163E89EA00CF239E /* YDViewController.xib in Resources */,
+				C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */,
 				C6B69825163E8B0800CF239E /* book in Resources */,
+				C6B69837163EA14B00CF239E /* MenuIcon.png in Resources */,
+				C6B69838163EA14B00CF239E /* MenuIcon@2x.png in Resources */,
+				C6B6984E163EA3E400CF239E /* YDContentsViewController.xib in Resources */,
+				C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */,
+				C6B69867163EB5FB00CF239E /* book2 in Resources */,
+				C6B69883163EC63500CF239E /* Icon-72.png in Resources */,
+				C6B69884163EC63500CF239E /* Icon-72@2x.png in Resources */,
+				C6B69885163EC63500CF239E /* Icon-Small-50.png in Resources */,
+				C6B69886163EC63500CF239E /* Icon-Small-50@2x.png in Resources */,
+				C6B69887163EC63500CF239E /* Icon-Small.png in Resources */,
+				C6B69888163EC63500CF239E /* Icon-Small@2x.png in Resources */,
+				C6B69889163EC63500CF239E /* Icon.png in Resources */,
+				C6B6988A163EC63500CF239E /* Icon@2x.png in Resources */,
+				C6B6988B163EC63500CF239E /* iTunesArtwork.png in Resources */,
+				C6B6988C163EC63500CF239E /* iTunesArtwork@2x.png in Resources */,
+				C6B6988E163EC7AE00CF239E /* chapter-3.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,9 +348,15 @@
 			files = (
 				C6B69809163E89EA00CF239E /* main.m in Sources */,
 				C6B6980D163E89EA00CF239E /* YDAppDelegate.m in Sources */,
-				C6B69816163E89EA00CF239E /* YDViewController.m in Sources */,
+				C6B69816163E89EA00CF239E /* YDArticleViewController.m in Sources */,
 				C6B6982A163E8BC300CF239E /* YDPublication.m in Sources */,
-				C6B6982E163E907D00CF239E /* YDArticleViewCell.m in Sources */,
+				C6B69846163EA36300CF239E /* IIViewDeckController.m in Sources */,
+				C6B69847163EA36300CF239E /* WrapController.m in Sources */,
+				C6B6984D163EA3E400CF239E /* YDContentsViewController.m in Sources */,
+				C6B69851163EA44000CF239E /* YDPublicationViewController.m in Sources */,
+				C6B69858163EAE4500CF239E /* YDArticle.m in Sources */,
+				C6B6985C163EB27C00CF239E /* GTMNSString+HTML.m in Sources */,
+				C6B6985F163EB32800CF239E /* YDContentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,12 +371,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C6B69817163E89EA00CF239E /* YDViewController.xib */ = {
+		C6B69817163E89EA00CF239E /* YDArticleViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C6B69818163E89EA00CF239E /* en */,
 			);
-			name = YDViewController.xib;
+			name = YDArticleViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -289,10 +437,12 @@
 		C6B6981D163E89EA00CF239E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Reader/Reader-Prefix.pch";
 				INFOPLIST_FILE = "Reader/Reader-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

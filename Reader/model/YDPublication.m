@@ -7,13 +7,14 @@
 //
 
 #import "YDPublication.h"
+#import "YDArticle.h"
 
 @implementation YDPublication (Private)
 
 - (void)parse {
     
     // Get the path to the metadata file
-    NSString *metaFile = [self.publicationPath stringByAppendingPathComponent:@"book.json"];
+    NSString *metaFile = [self.path stringByAppendingPathComponent:@"book.json"];
     
     // Parse the metafile
     NSError *error = nil;
@@ -24,14 +25,23 @@
                               ];
     if (metaInfo == nil) {
         NSLog(@"Parse Error: %@", error);
-        self.parseError = error;
         return;
     }
 
     // Parse the properties
     self.title    = [metaInfo valueForKey:@"title"];
-    self.contents = [metaInfo valueForKey:@"contents"];
-    NSLog(@"%@, %d article(s)", self.title, self.contents.count);
+    
+    // Parse the list of articles
+    NSMutableArray *articles = [NSMutableArray arrayWithCapacity:0];
+    for (NSString *articleName in [metaInfo valueForKey:@"contents"]) {
+        NSString *articlePath = [self.path stringByAppendingPathComponent:articleName];
+        YDArticle *article    = [[YDArticle alloc] initWithPath:articlePath];
+        [articles addObject:article];
+    }
+    self.articles = articles;
+    
+    //self.articles = [metaInfo valueForKey:@"contents"];
+    //NSLog(@"%@, %d article(s)", self.title, self.articles.count);
     
 }
 
@@ -39,16 +49,16 @@
 
 @implementation YDPublication
 
-- (id)initWithPublication:(NSString*)publicationPath {
+- (id)initWithPath:(NSString*)path {
     self = [super init];
     if (self) {
         
         // Assign the variables
-        _publicationPath = publicationPath;
+        _path = path;
         
         // Set the default variables
         _title    = @"";
-        _contents = [NSArray array];
+        _articles = [NSArray array];
         
         // Parse the publication
         [self parse];
@@ -58,12 +68,12 @@
 }
 
 - (NSString*)articleAtIndex:(int)index {
-    return [self.contents objectAtIndex:index];
+    return [self.articles objectAtIndex:index];
 }
 
 - (int)indexOfArticle:(NSString*)articleName {
     int index = -1;
-    for (NSString *article in self.contents) {
+    for (NSString *article in self.articles) {
         index++;
         if ([article isEqualToString:articleName]) {
             return index;
@@ -72,5 +82,8 @@
     return index;
 }
 
+- (NSString*)description {
+    return [NSString stringWithFormat:@"Publication: %@ (%d articles)", self.title, self.articles.count];
+}
 
 @end

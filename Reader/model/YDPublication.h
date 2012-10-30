@@ -10,12 +10,12 @@
 
 @interface YDPublication : NSObject
 
-@property (nonatomic,strong) NSString *publicationPath;
+@property (nonatomic,strong) NSString *path;
 @property (nonatomic,strong) NSString *title;
-@property (nonatomic,strong) NSArray *contents;
-@property (nonatomic,strong) NSError *parseError;
+@property (nonatomic,strong) NSArray *articles;
 
-- (id)initWithPublication:(NSString*)publicationPath;
+- (id)initWithPath:(NSString*)path;
+
 - (NSString*)articleAtIndex:(int)index;
 - (int)indexOfArticle:(NSString*)articleName;
 

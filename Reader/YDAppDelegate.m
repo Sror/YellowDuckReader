@@ -7,16 +7,21 @@
 //
 
 #import "YDAppDelegate.h"
-
-#import "YDViewController.h"
+#import "YDPublication.h"
+#import "YDPublicationViewController.h"
 
 @implementation YDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Load the publication
+    NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"book2" ofType:@""];
+    YDPublication *publication = [[YDPublication alloc] initWithPath:publicationPath];
 
-    self.viewController = [[YDViewController alloc] initWithNibName:@"YDViewController" bundle:nil];
+    // Load the main controller
+    self.viewController = [[YDPublicationViewController alloc] initWithPublication:publication];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
 
