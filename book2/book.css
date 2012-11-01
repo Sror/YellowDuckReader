@@ -62,7 +62,7 @@ html {
     text-align: center;
 }
 
-h1, .page {
+h1, h2, .page {
     line-height: 1.4em;
 }
 
@@ -75,7 +75,7 @@ a {
     margin: 30px;
 }
 
-h1, .cover {
+h1, h2, .cover {
     font-family: 'PT Sans', sans-serif;
 }
 

@@ -35,6 +35,9 @@
         }
     }
     
+    // Update the image paths
+    
+    
 }
 
 @end

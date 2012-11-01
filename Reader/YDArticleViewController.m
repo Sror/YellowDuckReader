@@ -10,6 +10,7 @@
 #import "YDPublication.h"
 #import "YDArticle.h"
 #import "YDPublicationViewController.h"
+#import "NSMutableString+Additions.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation YDArticleViewController
@@ -56,8 +57,29 @@
 - (void)loadArticle:(YDArticle*)article fromPublication:(YDPublication*)publication {
     NSLog(@"Loading %@ from %@", article, publication);
     self.currentArticle = article;
+    
+    /*
+    // Read the HTML
+    NSMutableString *html = [NSMutableString stringWithContentsOfFile:article.path
+                                                             encoding:NSUTF8StringEncoding
+                                                                error:nil
+                             ];
+    
+    // Fix the image URLs
+    [html replaceOccurrencesOfString:@".jpg\"" withString:@"@2x.jpg\""];
+    [html replaceOccurrencesOfString:@".JPG\"" withString:@"@2x.JPG\""];
+    [html replaceOccurrencesOfString:@".png\"" withString:@"@2x.png\""];
+    [html replaceOccurrencesOfString:@".PNG\"" withString:@"@2x.PNG\""];
+    
+    // Load the HTML
+    [self.articleView loadHTMLString:html
+                             baseURL:[NSURL fileURLWithPath:article.path]
+     ];
+    */
+    
     NSURL *articleURL = [NSURL fileURLWithPath:article.path];
     [self.articleView loadRequest:[NSURLRequest requestWithURL:articleURL]];
+    
 }
 
 #pragma mark - UIWebViewDelegate
