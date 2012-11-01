@@ -20,8 +20,6 @@
 		C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69817163E89EA00CF239E /* YDArticleViewController.xib */; };
 		C6B69825163E8B0800CF239E /* book in Resources */ = {isa = PBXBuildFile; fileRef = C6B69824163E8B0800CF239E /* book */; };
 		C6B6982A163E8BC300CF239E /* YDPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69829163E8BC300CF239E /* YDPublication.m */; };
-		C6B69837163EA14B00CF239E /* MenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69834163EA14B00CF239E /* MenuIcon.png */; };
-		C6B69838163EA14B00CF239E /* MenuIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69835163EA14B00CF239E /* MenuIcon@2x.png */; };
 		C6B69846163EA36300CF239E /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69843163EA36300CF239E /* IIViewDeckController.m */; };
 		C6B69849163EA37D00CF239E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B69848163EA37D00CF239E /* QuartzCore.framework */; };
 		C6B6984D163EA3E400CF239E /* YDContentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6984B163EA3E300CF239E /* YDContentsViewController.m */; };
@@ -88,8 +86,6 @@
 		C6B69824163E8B0800CF239E /* book */ = {isa = PBXFileReference; lastKnownFileType = folder; path = book; sourceTree = "<group>"; };
 		C6B69828163E8BC300CF239E /* YDPublication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDPublication.h; sourceTree = "<group>"; };
 		C6B69829163E8BC300CF239E /* YDPublication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPublication.m; sourceTree = "<group>"; };
-		C6B69834163EA14B00CF239E /* MenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuIcon.png; sourceTree = "<group>"; };
-		C6B69835163EA14B00CF239E /* MenuIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MenuIcon@2x.png"; sourceTree = "<group>"; };
 		C6B69842163EA36300CF239E /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
 		C6B69843163EA36300CF239E /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
 		C6B69848163EA37D00CF239E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -267,8 +263,6 @@
 				C6D3C966164060A500F959E4 /* icon_toc.png */,
 				C6D3C967164060A500F959E4 /* icon_toc@2x.png */,
 				C6B69878163EC63500CF239E /* icons */,
-				C6B69834163EA14B00CF239E /* MenuIcon.png */,
-				C6B69835163EA14B00CF239E /* MenuIcon@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -406,8 +400,6 @@
 				C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */,
 				C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */,
 				C6B69825163E8B0800CF239E /* book in Resources */,
-				C6B69837163EA14B00CF239E /* MenuIcon.png in Resources */,
-				C6B69838163EA14B00CF239E /* MenuIcon@2x.png in Resources */,
 				C6B6984E163EA3E400CF239E /* YDContentsViewController.xib in Resources */,
 				C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */,
 				C6B69867163EB5FB00CF239E /* book2 in Resources */,

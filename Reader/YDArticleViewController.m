@@ -80,20 +80,68 @@
     
     // Mailto request
     if ([request.URL.scheme isEqual:@"mailto"]) {
-        NSString *recipient = [request.URL.absoluteString substringFromIndex:7];
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        controller.mailComposeDelegate    = self;
-		[controller setToRecipients:@[recipient]];
-		[self presentViewController:controller animated:YES completion:nil];
+        
+        // Build temp array and dictionary
+        NSArray *tempArray = [request.URL.absoluteString componentsSeparatedByString:@"?"];
+        NSMutableDictionary *queryDictionary = [[NSMutableDictionary alloc] init];
+        
+        // Check array count to see if we have parameters to query
+        if ([tempArray count] == 2) {
+            NSArray *keyValuePairs = [[tempArray objectAtIndex:1] componentsSeparatedByString:@"&"];
+            for (NSString *queryString in keyValuePairs) {
+                NSArray *keyValuePair = [queryString componentsSeparatedByString:@"="];
+                if (keyValuePair.count == 2) {
+                    [queryDictionary setObject:[keyValuePair objectAtIndex:1] forKey:[keyValuePair objectAtIndex:0]];
+                }
+            }
+        }
+        
+        // Parse the different parts of the URL
+        NSString *email   = ([tempArray objectAtIndex:0]) ? [tempArray objectAtIndex:0] : [request.URL resourceSpecifier];
+        NSString *subject = [queryDictionary objectForKey:@"subject"];
+        NSString *body    = [queryDictionary objectForKey:@"body"];
+        
+        // Check if we can send mail
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
+            mailer.mailComposeDelegate    = self;
+            mailer.modalPresentationStyle = UIModalPresentationPageSheet;
+            
+            mailer.toRecipients = @[[email stringByReplacingOccurrencesOfString:@"mailto:" withString:@""]];
+            mailer.subject      = [subject stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            [mailer setMessageBody:[body stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] isHTML:NO];
+            
+            // Show the view
+            [self presentViewController:mailer animated:YES completion:nil];
+            
+        } else {
+            
+            // Check if the system can handle a mailto link
+            if ([[UIApplication sharedApplication] canOpenURL:request.URL]) {
+                [[UIApplication sharedApplication] openURL:request.URL];
+            } else {
+                // Display error message
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failure"
+                                                                message:@"Your device doesn't support the sending of emails!"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil
+                                      ];
+                [alert show];
+            }
+        }
+        
+        // Don't follow the link
         return NO;
+
     }
-    
+
     // Normal URL, should open the embedded web browser
     if ([request.URL.scheme isEqual:@"http"] == YES || [request.URL.scheme isEqual:@"https"] == YES) {
         [[UIApplication sharedApplication] openURL:request.URL];
         return NO;
     }
-    
+
     // Internal URL
     if ([request.URL.scheme isEqualToString:@"file"]) {
         NSString *articleName = request.URL.absoluteString.lastPathComponent;
@@ -131,9 +179,7 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self configureContentsView];
     self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
-    [self.articleView reload];
-    // fails if toc is shown
-    // fails to reflow the text
+    //[self.articleView reload];
 }
 
 #pragma mark - Helper functions

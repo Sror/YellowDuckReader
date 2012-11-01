@@ -50,6 +50,12 @@
   src: local('PT Serif Bold Italic'), local('PTSerif-BoldItalic'), url(fonts/PT_Serif-Web-BoldItalic.ttf) format('truetype');
 }
 
+/** WebKit specific **/
+
+html {
+    -webkit-text-size-adjust: none; /* Prevent font scaling in landscape */
+}
+
 /** General classes **/
 
 .center {
@@ -78,13 +84,13 @@ p, li {
 }
 
 /** iPad and Phones **/
+
 @media screen and (max-device-width: 480px) {
 
     .page {
         margin: 10px;
         font-size: 0.8em;
     }
-    
 
 }
 
@@ -98,9 +104,9 @@ p, li {
 
 
 @media screen and (max-device-width: 960px) and (orientation:landscape) {
-    
+
     img {
         max-width: 900px;
     }
-    
+
 }
