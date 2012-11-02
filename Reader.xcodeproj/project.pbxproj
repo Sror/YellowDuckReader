@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6197D7D16439D6C001C7A23 /* YDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C6197D7C16439D6C001C7A23 /* YDURLCache.m */; };
 		C6B697FD163E89E900CF239E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FC163E89E900CF239E /* UIKit.framework */; };
 		C6B697FF163E89E900CF239E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FE163E89E900CF239E /* Foundation.framework */; };
 		C6B69801163E89E900CF239E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B69800163E89E900CF239E /* CoreGraphics.framework */; };
@@ -60,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C6197D7B16439D6C001C7A23 /* YDURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDURLCache.h; sourceTree = "<group>"; };
+		C6197D7C16439D6C001C7A23 /* YDURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDURLCache.m; sourceTree = "<group>"; };
 		C6B697F8163E89E900CF239E /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B697FC163E89E900CF239E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6B697FE163E89E900CF239E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -197,6 +200,8 @@
 				C6B6984B163EA3E300CF239E /* YDContentsViewController.m */,
 				C6B6984C163EA3E300CF239E /* YDContentsViewController.xib */,
 				C6B69803163E89E900CF239E /* Supporting Files */,
+				C6197D7B16439D6C001C7A23 /* YDURLCache.h */,
+				C6197D7C16439D6C001C7A23 /* YDURLCache.m */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -429,6 +434,7 @@
 				C6B698B8163FC8CF00CF239E /* XPathQuery.m in Sources */,
 				C6D3C97516406E6C00F959E4 /* IIWrapController.m in Sources */,
 				C6D3C9791642BE0900F959E4 /* NSMutableString+Additions.m in Sources */,
+				C6197D7D16439D6C001C7A23 /* YDURLCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

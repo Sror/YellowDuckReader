@@ -27,13 +27,14 @@
     
     // Call the parent function
     [super viewDidLoad];
-    
+        
     // Configure the contents view
     [self configureContentsView];
     
     // Configure the web view
     self.articleView.scalesPageToFit    = NO;
     self.articleView.scrollView.bounces = NO;
+    self.articleView.suppressesIncrementalRendering = YES;
     self.articleView.delegate           = self;
     
     // Add a shadow to the top bar
@@ -42,7 +43,7 @@
     self.lblMagazine.layer.shadowOpacity = 0.5;
     self.lblMagazine.layer.shadowColor   = [[UIColor blackColor] CGColor];
     self.lblMagazine.layer.shadowOffset  = CGSizeZero;
-    self.lblMagazine.layer.shadowPath    = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
+    //self.lblMagazine.layer.shadowPath    = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
     
     // Load the first article
     [self loadArticleWithIndex:0 fromPublication:self.publication];
@@ -57,6 +58,12 @@
 - (void)loadArticle:(YDArticle*)article fromPublication:(YDPublication*)publication {
     NSLog(@"Loading %@ from %@", article, publication);
     self.currentArticle = article;
+    
+    // Clear the previous contents
+    // See: http://stackoverflow.com/questions/2933315/clear-uiwebview-content-upon-dismissal-of-modal-view-iphone-os-3-0
+    [self.articleView stringByEvaluatingJavaScriptFromString:@"document.open();document.close();"];
+
+    //[self.articleView loadHTMLString:@"" baseURL:nil];
     
     /*
     // Read the HTML
@@ -78,7 +85,11 @@
     */
     
     NSURL *articleURL = [NSURL fileURLWithPath:article.path];
-    [self.articleView loadRequest:[NSURLRequest requestWithURL:articleURL]];
+    NSURLRequest *articleRequest = [NSURLRequest requestWithURL:articleURL
+                                                    cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                timeoutInterval:5
+                                    ];
+    [self.articleView loadRequest:articleRequest];
     
 }
 
@@ -200,8 +211,7 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self configureContentsView];
-    self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
-    //[self.articleView reload];
+    //self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
 }
 
 #pragma mark - Helper functions
@@ -212,18 +222,20 @@
 }
 
 - (void)startLoadingArticle:(YDArticle*)article {
-    self.articleView.hidden      = YES;
+    self.btnShare.enabled        = NO;
+    self.articleView.alpha       = 0;
     self.loadingIndicator.hidden = NO;
     self.lblArticleTitle.text    = article.title;
     [self.loadingIndicator startAnimating];
 }
 
 - (void)stopLoading {
-    self.articleView.hidden      = NO;
+    self.btnShare.enabled        = YES;
     self.loadingIndicator.hidden = YES;
     [self.loadingIndicator stopAnimating];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     self.articleView.scrollView.scrollsToTop = YES; // NOT WORKING
+    self.articleView.alpha       = 1;
 }
 
 - (void)configureContentsView {

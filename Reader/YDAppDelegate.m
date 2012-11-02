@@ -9,10 +9,14 @@
 #import "YDAppDelegate.h"
 #import "YDPublication.h"
 #import "YDPublicationViewController.h"
+#import "YDURLCache.h"
 
 @implementation YDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
+
+    // Set the URL cache
+    [NSURLCache setSharedURLCache:[[YDURLCache alloc] init]];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     

@@ -9,7 +9,9 @@
         <link rel="stylesheet" type="text/css" href="book.css" />
 
         <link rel="stylesheet" media="only screen and (-webkit-min-device-pixel-ratio: 2)" href="css/highdpi.css" />
+
         <script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/publication.js" type="text/javascript" charset="utf-8"></script>
 
     </head>
 
@@ -24,23 +26,7 @@
         </div>
 
         <script type="text/javascript" charset="utf-8">
-
-            function highdpi_init() {
-                if ($('.replace-2x').css('font-size') == "1px") {
-                    var els = $("img.replace-2x").get();
-                    for (var i = 0; i < els.length; i++) {
-                        var src = els[i].src
-                        src = src.replace(".png", "@2x.png");
-                        src = src.replace(".jpg", "@2x.jpg");
-                        els[i].src = src;
-                    }
-                }
-            }
-
-            $(document).ready(function() {
-                highdpi_init();
-            });
-
+            YDPublication.init();
         </script>
 
     </body>
