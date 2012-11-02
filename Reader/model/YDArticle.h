@@ -14,6 +14,7 @@
 @property (nonatomic,strong) NSString *author;
 @property (nonatomic,strong) NSString *path;
 @property (nonatomic,strong) NSString *name;
+@property (nonatomic,strong) NSMutableString *html;
 
 - (id)initWithPath:(NSString*)path;
 

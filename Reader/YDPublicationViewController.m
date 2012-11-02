@@ -39,8 +39,6 @@
 
 - (void)loadArticle:(YDArticle*)article {
 
-    //[self closeLeftViewAnimated:YES];
-
     [self closeLeftViewAnimated:YES completion:^(IIViewDeckController *controller, BOOL success) {
         YDArticleViewController *articleViewController = (YDArticleViewController*)self.centerController;
         [articleViewController loadArticle:article fromPublication:self.publication];

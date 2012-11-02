@@ -56,40 +56,19 @@
 }
 
 - (void)loadArticle:(YDArticle*)article fromPublication:(YDPublication*)publication {
+
+    // Show that we are loading
     NSLog(@"Loading %@ from %@", article, publication);
     self.currentArticle = article;
     
     // Clear the previous contents
     // See: http://stackoverflow.com/questions/2933315/clear-uiwebview-content-upon-dismissal-of-modal-view-iphone-os-3-0
     [self.articleView stringByEvaluatingJavaScriptFromString:@"document.open();document.close();"];
-
-    //[self.articleView loadHTMLString:@"" baseURL:nil];
-    
-    /*
-    // Read the HTML
-    NSMutableString *html = [NSMutableString stringWithContentsOfFile:article.path
-                                                             encoding:NSUTF8StringEncoding
-                                                                error:nil
-                             ];
-    
-    // Fix the image URLs
-    [html replaceOccurrencesOfString:@".jpg\"" withString:@"@2x.jpg\""];
-    [html replaceOccurrencesOfString:@".JPG\"" withString:@"@2x.JPG\""];
-    [html replaceOccurrencesOfString:@".png\"" withString:@"@2x.png\""];
-    [html replaceOccurrencesOfString:@".PNG\"" withString:@"@2x.PNG\""];
     
     // Load the HTML
-    [self.articleView loadHTMLString:html
+    [self.articleView loadHTMLString:article.html
                              baseURL:[NSURL fileURLWithPath:article.path]
      ];
-    */
-    
-    NSURL *articleURL = [NSURL fileURLWithPath:article.path];
-    NSURLRequest *articleRequest = [NSURLRequest requestWithURL:articleURL
-                                                    cachePolicy:NSURLRequestReturnCacheDataElseLoad
-                                                timeoutInterval:5
-                                    ];
-    [self.articleView loadRequest:articleRequest];
     
 }
 
@@ -195,6 +174,14 @@
 
 - (void)webViewDidFinishLoad:(UIWebView*)webView {
     [self stopLoading];
+    
+    // Inject the JavaScript API
+    NSString *bridgeJSPath = [[NSBundle mainBundle] pathForResource:@"bridge" ofType:@"js"];
+    NSString *bridgeJSData = [NSString stringWithContentsOfFile:bridgeJSPath encoding:NSUTF8StringEncoding error:nil];
+    if (bridgeJSData) {
+        [self.articleView stringByEvaluatingJavaScriptFromString:bridgeJSData];
+    }
+    
 }
 
 - (void)webView:(UIWebView*)webView didFailLoadWithError:(NSError*)error {

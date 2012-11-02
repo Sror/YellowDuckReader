@@ -7,12 +7,18 @@
 //
 
 #import "YDArticle.h"
-#import "GTMNSString+HTML.h"
+#import "NSMutableString+Additions.h"
 #import "TFHpple.h"
 
 @implementation YDArticle (Private)
 
 - (void)parse {
+
+    // Read the HTML
+    self.html = [NSMutableString stringWithContentsOfFile:self.path
+                                                 encoding:NSUTF8StringEncoding
+                                                    error:nil
+                 ];
 
     // Parse the HTML data
     NSData *data    = [[NSData alloc] initWithContentsOfFile:self.path];
@@ -30,13 +36,31 @@
     // Get the meta tags
     NSArray *metaTags = [parser searchWithXPathQuery:@"//meta"];
     for (TFHppleElement *metaTag in metaTags) {
-        if ([[[metaTag.attributes valueForKey:@"name"] lowercaseString] isEqualToString:@"author"] == YES) {
-            self.author = [metaTag.attributes valueForKey:@"content"];
+        
+        // Get the name of the meta tag
+        NSString *metaTagName    = [[metaTag.attributes valueForKey:@"name"] lowercaseString];
+        NSString *metaTagContent = [metaTag.attributes valueForKey:@"content"];
+        
+        // Parse the author
+        if ([metaTagName isEqualToString:@"author"] == YES) {
+            self.author = metaTagContent;
         }
+        
+        // Fix the retina images
+        if ([metaTagName isEqualToString:@"replace2x"] == YES) {
+            if ([[metaTagContent lowercaseString] isEqualToString:@"true"]) {
+                
+                
+                // Fix the image URLs
+                [self.html replaceOccurrencesOfString:@".jpg\"" withString:@"@2x.jpg\""];
+                [self.html replaceOccurrencesOfString:@".JPG\"" withString:@"@2x.JPG\""];
+                [self.html replaceOccurrencesOfString:@".png\"" withString:@"@2x.png\""];
+                [self.html replaceOccurrencesOfString:@".PNG\"" withString:@"@2x.PNG\""];
+                
+            }
+        }
+        
     }
-    
-    // Update the image paths
-    
     
 }
 
