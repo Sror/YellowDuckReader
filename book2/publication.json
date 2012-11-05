@@ -1,6 +1,6 @@
 {
     "title": "Second Book",
-    "orientation": "both",
+    "orientations": "both",
     "contents": [
         "cover.html",
         "chapter-1.html",
