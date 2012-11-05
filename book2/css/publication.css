@@ -83,6 +83,10 @@ p, li {
     font-family: 'PT Serif', serif;
 }
 
+img {
+    max-width: 100%;
+}
+
 /** iPad and Phones **/
 
 @media screen and (max-device-width: 480px) {
@@ -94,19 +98,23 @@ p, li {
 
 }
 
+/*
 @media screen and (max-device-width: 480px) and (orientation:portrait) {
 
     img {
-        max-width: 280px;
+        max-width: 320px;
+        max-height: 320px;
     }
 
 }
 
 
-@media screen and (max-device-width: 960px) and (orientation:landscape) {
+@media screen (max-device-width: 480px) and (orientation:landscape) {
 
     img {
-        max-width: 900px;
+        max-width: 320px;
+        max-height: 320px;
     }
 
 }
+*/

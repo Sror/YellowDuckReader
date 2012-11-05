@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C6197D7D16439D6C001C7A23 /* YDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C6197D7C16439D6C001C7A23 /* YDURLCache.m */; };
-		C6A73C831643DBD90049F109 /* bridge.js in Sources */ = {isa = PBXBuildFile; fileRef = C6A73C821643DBD90049F109 /* bridge.js */; };
 		C6A73C841643DC980049F109 /* bridge.js in Resources */ = {isa = PBXBuildFile; fileRef = C6A73C821643DBD90049F109 /* bridge.js */; };
 		C6B697FD163E89E900CF239E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FC163E89E900CF239E /* UIKit.framework */; };
 		C6B697FF163E89E900CF239E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FE163E89E900CF239E /* Foundation.framework */; };
@@ -21,7 +20,6 @@
 		C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69812163E89EA00CF239E /* Default-568h@2x.png */; };
 		C6B69816163E89EA00CF239E /* YDArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69815163E89EA00CF239E /* YDArticleViewController.m */; };
 		C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69817163E89EA00CF239E /* YDArticleViewController.xib */; };
-		C6B69825163E8B0800CF239E /* book in Resources */ = {isa = PBXBuildFile; fileRef = C6B69824163E8B0800CF239E /* book */; };
 		C6B6982A163E8BC300CF239E /* YDPublication.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69829163E8BC300CF239E /* YDPublication.m */; };
 		C6B69846163EA36300CF239E /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69843163EA36300CF239E /* IIViewDeckController.m */; };
 		C6B69849163EA37D00CF239E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B69848163EA37D00CF239E /* QuartzCore.framework */; };
@@ -31,7 +29,6 @@
 		C6B69858163EAE4500CF239E /* YDArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69857163EAE4500CF239E /* YDArticle.m */; };
 		C6B6985F163EB32800CF239E /* YDContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6985E163EB32800CF239E /* YDContentCell.m */; };
 		C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69860163EB35100CF239E /* YDContentCell.xib */; };
-		C6B69867163EB5FB00CF239E /* book2 in Resources */ = {isa = PBXBuildFile; fileRef = C6B69866163EB5FB00CF239E /* book2 */; };
 		C6B6986D163EBC8600CF239E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B6986C163EBC8600CF239E /* MessageUI.framework */; };
 		C6B69883163EC63500CF239E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69879163EC63500CF239E /* Icon-72.png */; };
 		C6B69884163EC63500CF239E /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987A163EC63500CF239E /* Icon-72@2x.png */; };
@@ -334,9 +331,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6B6981C163E89EA00CF239E /* Build configuration list for PBXNativeTarget "Reader" */;
 			buildPhases = (
+				C635F26B1647D7EC00C0304C /* Copy Publication Contents */,
+				C6B697F6163E89E900CF239E /* Resources */,
 				C6B697F4163E89E900CF239E /* Sources */,
 				C6B697F5163E89E900CF239E /* Frameworks */,
-				C6B697F6163E89E900CF239E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -384,11 +382,9 @@
 				C6B69811163E89EA00CF239E /* Default@2x.png in Resources */,
 				C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */,
 				C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */,
-				C6B69825163E8B0800CF239E /* book in Resources */,
 				C6B6984E163EA3E400CF239E /* YDContentsViewController.xib in Resources */,
 				C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */,
 				C6A73C841643DC980049F109 /* bridge.js in Resources */,
-				C6B69867163EB5FB00CF239E /* book2 in Resources */,
 				C6B69883163EC63500CF239E /* Icon-72.png in Resources */,
 				C6B69884163EC63500CF239E /* Icon-72@2x.png in Resources */,
 				C6B69885163EC63500CF239E /* Icon-Small-50.png in Resources */,
@@ -414,6 +410,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C635F26B1647D7EC00C0304C /* Copy Publication Contents */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Publication Contents";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf \"${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/Publication/\"\n\nmkdir -p \"${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/Publication/\"\nfor f in \"${SRCROOT}/book2/\"*; do\n    cp -vLR \"${f}\" \"${TARGET_BUILD_DIR}/${EXECUTABLE_FOLDER_PATH}/Publication\"\ndone";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C6B697F4163E89E900CF239E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -434,7 +447,6 @@
 				C6D3C97516406E6C00F959E4 /* IIWrapController.m in Sources */,
 				C6D3C9791642BE0900F959E4 /* NSMutableString+Additions.m in Sources */,
 				C6197D7D16439D6C001C7A23 /* YDURLCache.m in Sources */,
-				C6A73C831643DBD90049F109 /* bridge.js in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

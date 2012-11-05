@@ -21,7 +21,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Load the publication
-    NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"book2" ofType:@""];
+    NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"Publication" ofType:@""];
     YDPublication *publication = [[YDPublication alloc] initWithPath:publicationPath];
 
     // Load the main controller
