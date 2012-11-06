@@ -12,11 +12,14 @@
 
 @interface YDPublication : NSObject
 
-@property (nonatomic,strong) NSString *path;
+@property (nonatomic,strong) NSURL *url;
+@property (nonatomic,strong) NSURL *baseURL;
+//@property (nonatomic,strong) NSString *path;
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSArray *articles;
 
 - (id)initWithPath:(NSString*)path;
+- (id)initWithURL:(NSURL*)url;
 
 - (YDArticle*)articleWithName:(NSString*)name;
 - (NSString*)articleAtIndex:(int)index;

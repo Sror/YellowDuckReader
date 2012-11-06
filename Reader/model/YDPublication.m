@@ -13,12 +13,15 @@
 
 - (void)parse {
     
+    // Set the base url
+    self.baseURL = [[NSURL alloc] initWithString:@".." relativeToURL:self.url].absoluteURL;
+    
     // Get the path to the metadata file
-    NSString *metaFile = [self.path stringByAppendingPathComponent:@"publication.json"];
+    //NSString *metaFile = [self.path stringByAppendingPathComponent:@"publication.json"];
     
     // Parse the metafile
     NSError *error = nil;
-    NSData *metaData = [NSData dataWithContentsOfFile:metaFile];
+    NSData *metaData = [NSData dataWithContentsOfURL:self.url];
     NSDictionary *metaInfo = [NSJSONSerialization JSONObjectWithData:metaData
                                                              options:kNilOptions
                                                                error:&error
@@ -34,8 +37,9 @@
     // Parse the list of articles
     NSMutableArray *articles = [NSMutableArray arrayWithCapacity:0];
     for (NSString *articleName in [metaInfo valueForKey:@"contents"]) {
-        NSString *articlePath = [self.path stringByAppendingPathComponent:articleName];
-        YDArticle *article    = [[YDArticle alloc] initWithPath:articlePath];
+//        NSString *articlePath = [self.path stringByAppendingPathComponent:articleName];
+        NSURL *articleURL  = [NSURL URLWithString:[[self.url.absoluteString stringByDeletingLastPathComponent] stringByAppendingPathComponent:articleName]];
+        YDArticle *article = [[YDArticle alloc] initWithURL:articleURL];
         [articles addObject:article];
     }
     self.articles = articles;
@@ -51,7 +55,26 @@
     if (self) {
         
         // Assign the variables
-        _path = path;
+        //_path = path;
+        _url = [NSURL fileURLWithPath:path];
+        
+        // Set the default variables
+        _title    = @"";
+        _articles = [NSArray array];
+        
+        // Parse the publication
+        [self parse];
+        
+    }
+    return self;
+}
+
+- (id)initWithURL:(NSURL*)url {
+    self = [super init];
+    if (self) {
+        
+        // Assign the variables
+        _url = url;
         
         // Set the default variables
         _title    = @"";

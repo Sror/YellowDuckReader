@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C60E12381648574300D8EE0A /* SDURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C60E12371648574300D8EE0A /* SDURLCache.m */; };
+		C60E1241164863AC00D8EE0A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C60E1240164863AC00D8EE0A /* SystemConfiguration.framework */; };
+		C60E1244164865B800D8EE0A /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C60E1243164865B800D8EE0A /* NSString+Additions.m */; };
+		C670A4471648EF1F00F9D670 /* YDCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C670A4461648EF1F00F9D670 /* YDCachingURLProtocol.m */; };
 		C6A73C841643DC980049F109 /* bridge.js in Resources */ = {isa = PBXBuildFile; fileRef = C6A73C821643DBD90049F109 /* bridge.js */; };
 		C6B697FD163E89E900CF239E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FC163E89E900CF239E /* UIKit.framework */; };
 		C6B697FF163E89E900CF239E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FE163E89E900CF239E /* Foundation.framework */; };
@@ -59,8 +61,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C60E12361648574300D8EE0A /* SDURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDURLCache.h; sourceTree = "<group>"; };
-		C60E12371648574300D8EE0A /* SDURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDURLCache.m; sourceTree = "<group>"; };
+		C60E1240164863AC00D8EE0A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C60E1242164865B800D8EE0A /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		C60E1243164865B800D8EE0A /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		C670A4451648EF1F00F9D670 /* YDCachingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCachingURLProtocol.h; sourceTree = "<group>"; };
+		C670A4461648EF1F00F9D670 /* YDCachingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCachingURLProtocol.m; sourceTree = "<group>"; };
 		C6A73C821643DBD90049F109 /* bridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bridge.js; sourceTree = "<group>"; };
 		C6B697F8163E89E900CF239E /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B697FC163E89E900CF239E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -134,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60E1241164863AC00D8EE0A /* SystemConfiguration.framework in Frameworks */,
 				C6B698AE163FC30000CF239E /* libxml2.dylib in Frameworks */,
 				C6B6986D163EBC8600CF239E /* MessageUI.framework in Frameworks */,
 				C6B69849163EA37D00CF239E /* QuartzCore.framework in Frameworks */,
@@ -146,13 +152,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C60E12351648574300D8EE0A /* SDURLCache */ = {
+		C670A4441648EF1F00F9D670 /* helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C60E12361648574300D8EE0A /* SDURLCache.h */,
-				C60E12371648574300D8EE0A /* SDURLCache.m */,
+				C670A4451648EF1F00F9D670 /* YDCachingURLProtocol.h */,
+				C670A4461648EF1F00F9D670 /* YDCachingURLProtocol.m */,
 			);
-			path = SDURLCache;
+			path = helpers;
 			sourceTree = "<group>";
 		};
 		C6A73C811643DBD90049F109 /* resources */ = {
@@ -185,6 +191,7 @@
 		C6B697FB163E89E900CF239E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C60E1240164863AC00D8EE0A /* SystemConfiguration.framework */,
 				C6B698AD163FC30000CF239E /* libxml2.dylib */,
 				C6B6986C163EBC8600CF239E /* MessageUI.framework */,
 				C6B69848163EA37D00CF239E /* QuartzCore.framework */,
@@ -198,12 +205,13 @@
 		C6B69802163E89E900CF239E /* Reader */ = {
 			isa = PBXGroup;
 			children = (
-				C6A73C811643DBD90049F109 /* resources */,
 				C6D3C9761642BE0900F959E4 /* categories */,
-				C6B69833163EA14A00CF239E /* images */,
+				C670A4441648EF1F00F9D670 /* helpers */,
 				C6B69827163E8B7800CF239E /* model */,
 				C6B6982B163E905800CF239E /* views */,
 				C6B69836163EA14B00CF239E /* vendor */,
+				C6B69833163EA14A00CF239E /* images */,
+				C6A73C811643DBD90049F109 /* resources */,
 				C6B6980B163E89EA00CF239E /* YDAppDelegate.h */,
 				C6B6980C163E89EA00CF239E /* YDAppDelegate.m */,
 				C6B6984F163EA44000CF239E /* YDPublicationViewController.h */,
@@ -275,7 +283,6 @@
 		C6B69836163EA14B00CF239E /* vendor */ = {
 			isa = PBXGroup;
 			children = (
-				C60E12351648574300D8EE0A /* SDURLCache */,
 				C6B698AF163FC8CF00CF239E /* hpple */,
 				C6B69841163EA36300CF239E /* ViewDeck */,
 			);
@@ -326,6 +333,8 @@
 		C6D3C9761642BE0900F959E4 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				C60E1242164865B800D8EE0A /* NSString+Additions.h */,
+				C60E1243164865B800D8EE0A /* NSString+Additions.m */,
 				C6D3C9771642BE0900F959E4 /* NSMutableString+Additions.h */,
 				C6D3C9781642BE0900F959E4 /* NSMutableString+Additions.m */,
 			);
@@ -454,7 +463,8 @@
 				C6B698B8163FC8CF00CF239E /* XPathQuery.m in Sources */,
 				C6D3C97516406E6C00F959E4 /* IIWrapController.m in Sources */,
 				C6D3C9791642BE0900F959E4 /* NSMutableString+Additions.m in Sources */,
-				C60E12381648574300D8EE0A /* SDURLCache.m in Sources */,
+				C60E1244164865B800D8EE0A /* NSString+Additions.m in Sources */,
+				C670A4471648EF1F00F9D670 /* YDCachingURLProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

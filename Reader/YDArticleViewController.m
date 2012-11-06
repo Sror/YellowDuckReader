@@ -67,7 +67,7 @@
     
     // Load the HTML
     [self.articleView loadHTMLString:article.html
-                             baseURL:[NSURL fileURLWithPath:article.path]
+                             baseURL:article.url
      ];
     
 }
@@ -148,13 +148,22 @@
 
     }
 
+    // Internal URL
+    if ([request.URL.absoluteString hasPrefix:self.publication.baseURL.absoluteString]) {
+        NSString *articleName = request.URL.absoluteString.lastPathComponent;
+        YDArticle *article    = [self.publication articleWithName:articleName];
+        [self startLoadingArticle:article];
+        [self.viewDeckController willLoadArticle:article];
+        return YES;
+    }
+
     // Normal URL, should open the embedded web browser
     if ([request.URL.scheme isEqual:@"http"] == YES || [request.URL.scheme isEqual:@"https"] == YES) {
         [[UIApplication sharedApplication] openURL:request.URL];
         return NO;
     }
 
-    // Internal URL
+    /*
     if ([request.URL.scheme isEqualToString:@"file"]) {
         NSString *articleName = request.URL.absoluteString.lastPathComponent;
         YDArticle *article    = [self.publication articleWithName:articleName];
@@ -162,6 +171,7 @@
         [self.viewDeckController willLoadArticle:article];
         return YES;
     }
+    */
     
     // Follow the link
     return YES;
