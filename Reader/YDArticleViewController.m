@@ -43,7 +43,6 @@
     self.lblMagazine.layer.shadowOpacity = 0.5;
     self.lblMagazine.layer.shadowColor   = [[UIColor blackColor] CGColor];
     self.lblMagazine.layer.shadowOffset  = CGSizeZero;
-    //self.lblMagazine.layer.shadowPath    = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
     
     // Load the first article
     [self loadArticleWithIndex:0 fromPublication:self.publication];
@@ -75,7 +74,7 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType {
-    
+        
     // Callback function
     if ( [request.URL.scheme isEqualToString:@"reader"] ) {
         if ([request.URL.host isEqualToString:@"showTOC"]) {
@@ -150,6 +149,7 @@
 
     // Internal URL
     if ([request.URL.absoluteString hasPrefix:self.publication.baseURL.absoluteString]) {
+        // TODO: should be improved as this breaks with e.g. impress.js
         NSString *articleName = request.URL.absoluteString.lastPathComponent;
         YDArticle *article    = [self.publication articleWithName:articleName];
         [self startLoadingArticle:article];
@@ -162,16 +162,6 @@
         [[UIApplication sharedApplication] openURL:request.URL];
         return NO;
     }
-
-    /*
-    if ([request.URL.scheme isEqualToString:@"file"]) {
-        NSString *articleName = request.URL.absoluteString.lastPathComponent;
-        YDArticle *article    = [self.publication articleWithName:articleName];
-        [self startLoadingArticle:article];
-        [self.viewDeckController willLoadArticle:article];
-        return YES;
-    }
-    */
     
     // Follow the link
     return YES;
@@ -208,7 +198,6 @@
 
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
     [self configureContentsView];
-    //self.lblMagazine.layer.shadowPath = [[UIBezierPath bezierPathWithRect:self.lblMagazine.bounds] CGPath];
 }
 
 #pragma mark - Helper functions

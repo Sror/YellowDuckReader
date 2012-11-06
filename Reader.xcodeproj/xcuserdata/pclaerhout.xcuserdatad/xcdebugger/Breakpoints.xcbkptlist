@@ -34,26 +34,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reader/YDArticleViewController.m"
-         timestampString = "373841533.923294"
+         timestampString = "373890681.570252"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
-         landmarkName = "@implementation YDArticleViewController"
-         landmarkType = "3">
+         startingLineNumber = "210"
+         endingLineNumber = "210"
+         landmarkName = "-showMenu:"
+         landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reader/YDArticleViewController.m"
-         timestampString = "373841533.923294"
+         timestampString = "373890681.570252"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "190"
-         endingLineNumber = "190"
-         landmarkName = "-webViewDidFinishLoad:"
-         landmarkType = "5">
+         startingLineNumber = "192"
+         endingLineNumber = "192"
+         landmarkName = "@implementation YDArticleViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
