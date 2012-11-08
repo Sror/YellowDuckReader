@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YDContentCell : UITableViewCell
+@interface YDContentCellLarge : UITableViewCell
 
 @property (nonatomic,strong) IBOutlet UILabel *title;
 @property (nonatomic,strong) IBOutlet UILabel *author;

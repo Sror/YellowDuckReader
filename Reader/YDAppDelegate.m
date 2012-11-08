@@ -19,7 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Load the publication
-    NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"publication" ofType:@"json" inDirectory:@"Publication"];
+    NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"Publication" ofType:@""];
     YDPublication *publication = [[YDPublication alloc] initWithPath:publicationPath];
 
     // Load the main controller

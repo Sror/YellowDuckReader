@@ -34,11 +34,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reader/YDArticleViewController.m"
-         timestampString = "373890681.570252"
+         timestampString = "374082455.296642"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "208"
+         endingLineNumber = "208"
          landmarkName = "-startLoadingArticle:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reader/YDArticleViewController.m"
-         timestampString = "373890681.570252"
+         timestampString = "374082455.296642"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "192"
-         endingLineNumber = "192"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
          landmarkName = "@implementation YDArticleViewController"
          landmarkType = "3">
       </FileBreakpoint>
@@ -65,7 +65,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "88"
          endingLineNumber = "88"
-         landmarkName = "-articleWithName:"
+         landmarkName = "-indexOfArticle:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint

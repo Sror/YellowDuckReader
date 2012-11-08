@@ -9,7 +9,7 @@
 #import "YDContentsViewController.h"
 #import "YDPublication.h"
 #import "YDArticle.h"
-#import "YDContentCell.h"
+#import "YDContentCellLarge.h"
 #import "YDPublicationViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -49,7 +49,7 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    YDContentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YDContentCell" forIndexPath:indexPath];
+    YDContentCellLarge *cell = [tableView dequeueReusableCellWithIdentifier:@"YDContentCell" forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     YDArticle *article  = [self.publication.articles objectAtIndex:indexPath.row];
     cell.title.text     = article.title;

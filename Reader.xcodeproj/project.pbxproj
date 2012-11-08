@@ -29,8 +29,8 @@
 		C6B6984E163EA3E400CF239E /* YDContentsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B6984C163EA3E300CF239E /* YDContentsViewController.xib */; };
 		C6B69851163EA44000CF239E /* YDPublicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69850163EA44000CF239E /* YDPublicationViewController.m */; };
 		C6B69858163EAE4500CF239E /* YDArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B69857163EAE4500CF239E /* YDArticle.m */; };
-		C6B6985F163EB32800CF239E /* YDContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6985E163EB32800CF239E /* YDContentCell.m */; };
-		C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69860163EB35100CF239E /* YDContentCell.xib */; };
+		C6B6985F163EB32800CF239E /* YDContentCellLarge.m in Sources */ = {isa = PBXBuildFile; fileRef = C6B6985E163EB32800CF239E /* YDContentCellLarge.m */; };
+		C6B69861163EB35100CF239E /* YDContentCellLarge.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6B69860163EB35100CF239E /* YDContentCellLarge.xib */; };
 		C6B6986D163EBC8600CF239E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B6986C163EBC8600CF239E /* MessageUI.framework */; };
 		C6B69883163EC63500CF239E /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B69879163EC63500CF239E /* Icon-72.png */; };
 		C6B69884163EC63500CF239E /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C6B6987A163EC63500CF239E /* Icon-72@2x.png */; };
@@ -96,9 +96,9 @@
 		C6B69850163EA44000CF239E /* YDPublicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDPublicationViewController.m; sourceTree = "<group>"; };
 		C6B69856163EAE4500CF239E /* YDArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDArticle.h; sourceTree = "<group>"; };
 		C6B69857163EAE4500CF239E /* YDArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDArticle.m; sourceTree = "<group>"; };
-		C6B6985D163EB32800CF239E /* YDContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDContentCell.h; sourceTree = "<group>"; };
-		C6B6985E163EB32800CF239E /* YDContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDContentCell.m; sourceTree = "<group>"; };
-		C6B69860163EB35100CF239E /* YDContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDContentCell.xib; sourceTree = "<group>"; };
+		C6B6985D163EB32800CF239E /* YDContentCellLarge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDContentCellLarge.h; sourceTree = "<group>"; };
+		C6B6985E163EB32800CF239E /* YDContentCellLarge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDContentCellLarge.m; sourceTree = "<group>"; };
+		C6B69860163EB35100CF239E /* YDContentCellLarge.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDContentCellLarge.xib; sourceTree = "<group>"; };
 		C6B69866163EB5FB00CF239E /* book2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = book2; sourceTree = "<group>"; };
 		C6B6986C163EBC8600CF239E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		C6B69879163EC63500CF239E /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -255,9 +255,9 @@
 		C6B6982B163E905800CF239E /* views */ = {
 			isa = PBXGroup;
 			children = (
-				C6B6985D163EB32800CF239E /* YDContentCell.h */,
-				C6B6985E163EB32800CF239E /* YDContentCell.m */,
-				C6B69860163EB35100CF239E /* YDContentCell.xib */,
+				C6B6985D163EB32800CF239E /* YDContentCellLarge.h */,
+				C6B6985E163EB32800CF239E /* YDContentCellLarge.m */,
+				C6B69860163EB35100CF239E /* YDContentCellLarge.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -400,7 +400,7 @@
 				C6B69813163E89EA00CF239E /* Default-568h@2x.png in Resources */,
 				C6B69819163E89EA00CF239E /* YDArticleViewController.xib in Resources */,
 				C6B6984E163EA3E400CF239E /* YDContentsViewController.xib in Resources */,
-				C6B69861163EB35100CF239E /* YDContentCell.xib in Resources */,
+				C6B69861163EB35100CF239E /* YDContentCellLarge.xib in Resources */,
 				C6A73C841643DC980049F109 /* bridge.js in Resources */,
 				C6B69883163EC63500CF239E /* Icon-72.png in Resources */,
 				C6B69884163EC63500CF239E /* Icon-72@2x.png in Resources */,
@@ -457,7 +457,7 @@
 				C6B6984D163EA3E400CF239E /* YDContentsViewController.m in Sources */,
 				C6B69851163EA44000CF239E /* YDPublicationViewController.m in Sources */,
 				C6B69858163EAE4500CF239E /* YDArticle.m in Sources */,
-				C6B6985F163EB32800CF239E /* YDContentCell.m in Sources */,
+				C6B6985F163EB32800CF239E /* YDContentCellLarge.m in Sources */,
 				C6B698B6163FC8CF00CF239E /* TFHpple.m in Sources */,
 				C6B698B7163FC8CF00CF239E /* TFHppleElement.m in Sources */,
 				C6B698B8163FC8CF00CF239E /* XPathQuery.m in Sources */,
