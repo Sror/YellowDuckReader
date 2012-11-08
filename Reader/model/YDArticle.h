@@ -10,13 +10,12 @@
 
 @interface YDArticle : NSObject
 
-@property (nonatomic,strong) NSURL *url;
 @property (nonatomic,strong) NSString *title;
 @property (nonatomic,strong) NSString *author;
-//@property (nonatomic,strong) NSString *path;
+@property (nonatomic,strong) NSString *path;
 @property (nonatomic,strong) NSString *name;
 @property (nonatomic,strong) NSMutableString *html;
 
-- (id)initWithURL:(NSURL*)url;
+- (id)initWithPath:(NSString*)path;
 
 @end

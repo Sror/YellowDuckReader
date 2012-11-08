@@ -15,13 +15,13 @@
 - (void)parse {
     
     // Read the HTML
-    self.html = [NSMutableString stringWithContentsOfURL:self.url
-                                                encoding:NSUTF8StringEncoding
-                                                   error:nil
+    self.html = [NSMutableString stringWithContentsOfFile:self.path
+                                                 encoding:NSUTF8StringEncoding
+                                                    error:nil
                  ];
 
     // Parse the HTML data
-    NSData *data    = [[NSData alloc] initWithContentsOfURL:self.url];
+    NSData *data    = [[NSData alloc] initWithContentsOfFile:self.path];
     TFHpple *parser = [[TFHpple alloc] initWithHTMLData:data];
     
     // Get the title elements
@@ -68,13 +68,13 @@
 
 @implementation YDArticle
 
-- (id)initWithURL:(NSURL*)url {
+- (id)initWithPath:(NSString*)path {
     self = [super init];
     if (self) {
         
         // Assign the variables
-        _url  = url;
-        _name = url.absoluteString.lastPathComponent;
+        _path = path;
+        _name = path.lastPathComponent;
         
         // Set the default variables
         _title  = [_name stringByDeletingPathExtension];
@@ -88,7 +88,7 @@
 }
 
 - (BOOL)isEqual:(YDArticle*)article {
-    return [article.url.absoluteString isEqualToString:self.url.absoluteString];
+    return [article.path isEqualToString:self.path];
 }
 
 - (NSString*)description {
