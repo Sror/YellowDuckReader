@@ -26,14 +26,15 @@
 //    urlCache.ignoreMemoryOnlyStoragePolicy = YES;
 //    [NSURLCache setSharedURLCache:urlCache];
 
-    [NSURLProtocol registerClass:[YDCachingURLProtocol class]];
+//    [NSURLProtocol registerClass:[YDCachingURLProtocol class]];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Load the publication
-    //NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"Publication" ofType:@""];
-    NSURL *publicationURL      = [NSURL URLWithString:@"http://pieter.web.shphosting.com/publications/sample1/publication.json"];
-    YDPublication *publication = [[YDPublication alloc] initWithURL:publicationURL];
+    NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"publication" ofType:@"json" inDirectory:@"Publication"];
+    //NSURL *publicationURL      = [NSURL fileURLWithPath:publicationPath];
+    //NSURL *publicationURL      = [NSURL URLWithString:@"http://pieter.web.shphosting.com/publications/sample1/publication.json"];
+    YDPublication *publication = [[YDPublication alloc] initWithPath:publicationPath];
 
     // Load the main controller
     self.viewController = [[YDPublicationViewController alloc] initWithPublication:publication];

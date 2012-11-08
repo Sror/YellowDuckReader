@@ -14,7 +14,7 @@
 - (void)parse {
     
     // Set the base url
-    self.baseURL = [[NSURL alloc] initWithString:@".." relativeToURL:self.url].absoluteURL;
+    self.baseURL = [[NSURL alloc] initWithString:@"." relativeToURL:self.url].absoluteURL;
     
     // Get the path to the metadata file
     //NSString *metaFile = [self.path stringByAppendingPathComponent:@"publication.json"];
@@ -37,8 +37,7 @@
     // Parse the list of articles
     NSMutableArray *articles = [NSMutableArray arrayWithCapacity:0];
     for (NSString *articleName in [metaInfo valueForKey:@"contents"]) {
-//        NSString *articlePath = [self.path stringByAppendingPathComponent:articleName];
-        NSURL *articleURL  = [NSURL URLWithString:[[self.url.absoluteString stringByDeletingLastPathComponent] stringByAppendingPathComponent:articleName]];
+        NSURL *articleURL  = [[NSURL alloc] initWithString:articleName relativeToURL:self.baseURL].absoluteURL;
         YDArticle *article = [[YDArticle alloc] initWithURL:articleURL];
         [articles addObject:article];
     }
@@ -55,7 +54,6 @@
     if (self) {
         
         // Assign the variables
-        //_path = path;
         _url = [NSURL fileURLWithPath:path];
         
         // Set the default variables

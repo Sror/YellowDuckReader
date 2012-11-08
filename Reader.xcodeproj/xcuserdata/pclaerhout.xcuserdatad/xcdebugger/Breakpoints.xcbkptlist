@@ -39,7 +39,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "210"
          endingLineNumber = "210"
-         landmarkName = "-showMenu:"
+         landmarkName = "-startLoadingArticle:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Reader/model/YDPublication.m"
-         timestampString = "373843560.894473"
+         timestampString = "373967068.95015"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "90"
-         endingLineNumber = "90"
+         startingLineNumber = "88"
+         endingLineNumber = "88"
          landmarkName = "-articleWithName:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -144,6 +144,19 @@
          startingLineNumber = "58"
          endingLineNumber = "58"
          landmarkName = "+hppleElementWithNode:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Reader/model/YDPublication.m"
+         timestampString = "373966586.159654"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "-parse"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

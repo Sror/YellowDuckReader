@@ -13,7 +13,7 @@
 @implementation YDArticle (Private)
 
 - (void)parse {
-
+    
     // Read the HTML
     self.html = [NSMutableString stringWithContentsOfURL:self.url
                                                 encoding:NSUTF8StringEncoding
