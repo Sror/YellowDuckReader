@@ -10,6 +10,7 @@
 #import "YDPublication.h"
 #import "YDArticle.h"
 #import "YDContentCellLarge.h"
+#import "YDContentCellSmall.h"
 #import "YDPublicationViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -27,11 +28,11 @@
     
     [super viewDidLoad];
     
-    UINib *contentCellNib = [UINib nibWithNibName:@"YDContentCell" bundle:nil];
-    [self.contentsTable registerNib:contentCellNib forCellReuseIdentifier:@"YDContentCell"];
+    UINib *contentCellNibLarge = [UINib nibWithNibName:@"YDContentCellLarge" bundle:nil];
+    [self.contentsTable registerNib:contentCellNibLarge forCellReuseIdentifier:@"YDContentCellLarge"];
     
-//    UIFont *interfaceFont = [UIFont fontWithName:@"PT Sans" size:17.0];
-//    self.lblMagazine.font = interfaceFont;
+    UINib *contentCellNibSmall = [UINib nibWithNibName:@"YDContentCellSmall" bundle:nil];
+    [self.contentsTable registerNib:contentCellNibSmall forCellReuseIdentifier:@"YDContentCellSmall"];
     
     self.lblMagazine.layer.masksToBounds = NO;
     self.lblMagazine.layer.shadowRadius  = 4;
@@ -49,25 +50,44 @@
 }
 
 - (UITableViewCell*)tableView:(UITableView*)tableView cellForRowAtIndexPath:(NSIndexPath*)indexPath {
-    YDContentCellLarge *cell = [tableView dequeueReusableCellWithIdentifier:@"YDContentCell" forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+
     YDArticle *article  = [self.publication.articles objectAtIndex:indexPath.row];
-    cell.title.text     = article.title;
-    cell.author.text    = article.author;
-    if ([article isEqual:self.currentArticle]) {
-        cell.title.textColor  = [UIColor blackColor];
-        cell.author.textColor = [UIColor blackColor];
+
+    if ([article.author isEqualToString:@""]) {
+        YDContentCellSmall *cell = [tableView dequeueReusableCellWithIdentifier:@"YDContentCellSmall" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.title.text     = article.title;
+        if ([article isEqual:self.currentArticle]) {
+            cell.title.textColor  = [UIColor blackColor];
+        } else {
+            cell.title.textColor  = [UIColor grayColor];
+        }
+        return cell;
     } else {
-        cell.title.textColor  = [UIColor grayColor];
-        cell.author.textColor = [UIColor grayColor];
+        YDContentCellLarge *cell = [tableView dequeueReusableCellWithIdentifier:@"YDContentCellLarge" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.title.text     = article.title;
+        cell.author.text    = article.author;
+        if ([article isEqual:self.currentArticle]) {
+            cell.title.textColor  = [UIColor blackColor];
+            cell.author.textColor = [UIColor blackColor];
+        } else {
+            cell.title.textColor  = [UIColor grayColor];
+            cell.author.textColor = [UIColor grayColor];
+        }
+        return cell;
     }
-    return cell;
 }
 
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView*)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath {
-    return 60;
+    YDArticle *article = [self.publication.articles objectAtIndex:indexPath.row];
+    if ([article.author isEqualToString:@""]) {
+        return 44;
+    } else {
+        return 60;
+    }
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {

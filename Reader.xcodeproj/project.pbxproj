@@ -11,6 +11,8 @@
 		C60E1244164865B800D8EE0A /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C60E1243164865B800D8EE0A /* NSString+Additions.m */; };
 		C670A4471648EF1F00F9D670 /* YDCachingURLProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C670A4461648EF1F00F9D670 /* YDCachingURLProtocol.m */; };
 		C6A73C841643DC980049F109 /* bridge.js in Resources */ = {isa = PBXBuildFile; fileRef = C6A73C821643DBD90049F109 /* bridge.js */; };
+		C6A7DF69164C0D2A00B68575 /* YDContentCellSmall.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A7DF68164C0D2A00B68575 /* YDContentCellSmall.m */; };
+		C6A7DF6C164C0D4200B68575 /* YDContentCellSmall.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6A7DF6B164C0D4200B68575 /* YDContentCellSmall.xib */; };
 		C6B697FD163E89E900CF239E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FC163E89E900CF239E /* UIKit.framework */; };
 		C6B697FF163E89E900CF239E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B697FE163E89E900CF239E /* Foundation.framework */; };
 		C6B69801163E89E900CF239E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B69800163E89E900CF239E /* CoreGraphics.framework */; };
@@ -67,6 +69,9 @@
 		C670A4451648EF1F00F9D670 /* YDCachingURLProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDCachingURLProtocol.h; sourceTree = "<group>"; };
 		C670A4461648EF1F00F9D670 /* YDCachingURLProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDCachingURLProtocol.m; sourceTree = "<group>"; };
 		C6A73C821643DBD90049F109 /* bridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bridge.js; sourceTree = "<group>"; };
+		C6A7DF67164C0D2A00B68575 /* YDContentCellSmall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDContentCellSmall.h; sourceTree = "<group>"; };
+		C6A7DF68164C0D2A00B68575 /* YDContentCellSmall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDContentCellSmall.m; sourceTree = "<group>"; };
+		C6A7DF6B164C0D4200B68575 /* YDContentCellSmall.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDContentCellSmall.xib; sourceTree = "<group>"; };
 		C6B697F8163E89E900CF239E /* Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B697FC163E89E900CF239E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C6B697FE163E89E900CF239E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -258,6 +263,9 @@
 				C6B6985D163EB32800CF239E /* YDContentCellLarge.h */,
 				C6B6985E163EB32800CF239E /* YDContentCellLarge.m */,
 				C6B69860163EB35100CF239E /* YDContentCellLarge.xib */,
+				C6A7DF67164C0D2A00B68575 /* YDContentCellSmall.h */,
+				C6A7DF68164C0D2A00B68575 /* YDContentCellSmall.m */,
+				C6A7DF6B164C0D4200B68575 /* YDContentCellSmall.xib */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -422,6 +430,7 @@
 				C6D3C96F164060A500F959E4 /* icon_share@2x.png in Resources */,
 				C6D3C970164060A500F959E4 /* icon_toc.png in Resources */,
 				C6D3C971164060A500F959E4 /* icon_toc@2x.png in Resources */,
+				C6A7DF6C164C0D4200B68575 /* YDContentCellSmall.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +474,7 @@
 				C6D3C9791642BE0900F959E4 /* NSMutableString+Additions.m in Sources */,
 				C60E1244164865B800D8EE0A /* NSString+Additions.m in Sources */,
 				C670A4471648EF1F00F9D670 /* YDCachingURLProtocol.m in Sources */,
+				C6A7DF69164C0D2A00B68575 /* YDContentCellSmall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
