@@ -9,31 +9,17 @@
 #import "YDAppDelegate.h"
 #import "YDPublication.h"
 #import "YDPublicationViewController.h"
-//#import "SDURLCache.h"
-#import "YDCachingURLProtocol.h"
+//#import "YDCachingURLProtocol.h"
 
 @implementation YDAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions {
 
-//    // Set the URL cache
-//    SDURLCache *urlCache = [[SDURLCache alloc] initWithMemoryCapacity:1024*1024     // 1MB mem cache
-//                                                         diskCapacity:1024*1024*500 // 5MB disk cache
-//                                                             diskPath:[SDURLCache defaultCachePath]
-//                            ];
-//    urlCache.allowCachingResponsesToNonCachedRequests = YES;
-//    urlCache.minCacheInterval = 0;
-//    urlCache.ignoreMemoryOnlyStoragePolicy = YES;
-//    [NSURLCache setSharedURLCache:urlCache];
-
-//    [NSURLProtocol registerClass:[YDCachingURLProtocol class]];
-    
+    // Create the main window
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     // Load the publication
     NSString *publicationPath  = [[NSBundle mainBundle] pathForResource:@"publication" ofType:@"json" inDirectory:@"Publication"];
-    //NSURL *publicationURL      = [NSURL fileURLWithPath:publicationPath];
-    //NSURL *publicationURL      = [NSURL URLWithString:@"http://pieter.web.shphosting.com/publications/sample1/publication.json"];
     YDPublication *publication = [[YDPublication alloc] initWithPath:publicationPath];
 
     // Load the main controller
@@ -43,21 +29,6 @@
 
     return YES;
     
-}
-
-- (void)applicationWillResignActive:(UIApplication*)application {
-}
-
-- (void)applicationDidEnterBackground:(UIApplication*)application {
-}
-
-- (void)applicationWillEnterForeground:(UIApplication*)application {
-}
-
-- (void)applicationDidBecomeActive:(UIApplication*)application {
-}
-
-- (void)applicationWillTerminate:(UIApplication*)application {
 }
 
 @end
