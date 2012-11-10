@@ -60,6 +60,8 @@
     NSLog(@"Loading %@ from %@", article, publication);
     self.currentArticle = article;
     
+    [self startLoadingArticle:article];
+    
     // Clear the previous contents
     // See: http://stackoverflow.com/questions/2933315/clear-uiwebview-content-upon-dismissal-of-modal-view-iphone-os-3-0
     [self.articleView stringByEvaluatingJavaScriptFromString:@"document.open();document.close();"];
@@ -158,6 +160,7 @@
         NSString *articleName = request.URL.absoluteString.lastPathComponent;
         YDArticle *article    = [self.publication articleWithName:articleName];
         [self.viewDeckController willLoadArticle:article];
+        [self startLoadingArticle:article];
         return YES;
     }
 
