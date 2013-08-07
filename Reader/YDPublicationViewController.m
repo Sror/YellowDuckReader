@@ -30,6 +30,10 @@
     self.leftController   = [[YDContentsViewController alloc] initWithPublication:self.publication];
     self.rightController  = nil;
     
+    self.viewDeckController.leftSize = 320;
+    self.viewDeckController.maxSize  = 320;
+    self.viewDeckController.sizeMode = IIViewDeckLedgeSizeMode;
+
 }
 
 - (void)willLoadArticle:(YDArticle*)article {
